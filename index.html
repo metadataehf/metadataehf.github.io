@@ -1,1 +1,126 @@
-"Hello World" 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Metadata ehf.</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #FF004D;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            font-size: 2rem;
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #595959;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav a {
+            color: white;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #FF004D;
+        }
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+        section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        section:hover {
+            transform: translateY(-5px);
+        }
+        h2 {
+            color: #FF004D;
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        h3 {
+            font-family: 'Merriweather', serif;
+            font-weight: 400;
+            color: #444;
+        }
+        p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #666;
+            margin: 0.5rem 0;
+        }
+        footer {
+            background-color: #FF004D;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+        }
+        @media (max-width: 768px) {
+            header {
+                font-size: 1.5rem;
+                padding: 1.5rem;
+            }
+            main {
+                padding: 1rem;
+            }
+            section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>Welcome to Metadata GitHub Pages</div>                
+    </header>    
+    <main>        
+        <section id="services">
+            <h2>Here you will find software documentation for some of our Metadata products</h2>            
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Pósthússtræti 3, 101 Reykjavík, Iceland</p>
+            <p>Phone: +354 532 9000</p>
+            <p>Email: <a href="mailto:info@metadata.is" style="color: #FF004D; text-decoration: none;">info@metadata.is</a></p>
+        </section>
+    </main>
+    <footer>
+        &copy; 2025 Metadata ehf.
+    </footer>
+</body>
+</html>
