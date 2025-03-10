@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Georg - Main Page Help</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+
+        h1 {
+            color: #e05d6f;
+            border-bottom: 1px solid #e05d6f;
+            padding-bottom: 10px;
+            font-weight: 600;
+        }
+
+        h2 {
+            color: #e05d6f;
+            margin-top: 25px;
+            font-weight: 500;
+        }
+
+        .note {
+            background-color: #fff5f6;
+            border-left: 4px solid #e05d6f;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            margin: 15px 0;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        ul,
+        ol {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .tip {
+            background-color: #f7f9fa;
+            border-left: 4px solid #b5838d;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+        }
+
+        strong {
+            color: #c45063;
+        }
+
+        .container {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-image {
+            background-color: #f9e8ea;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .header-image svg {
+            max-width: 120px;
+            height: auto;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .feature-item {
+            background-color: #fefefe;
+            border: 1px solid #f0f0f0;
+            border-radius: 6px;
+            padding: 15px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-title {
+            color: #e05d6f;
+            font-weight: 500;
+            margin-top: 0;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 8px;
+        }
+
+        @media (max-width: 600px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        
+
+        <img src="GeorgLogo.png" alt="Georg Logo" style="display: block; margin: 20px auto; max-width: 100px; border: none; box-shadow: none; padding: 10px;">
+        <p></p>
+        <h1 style="text-align: center;">Georg - Claims & Complaints Overview</h1>
+        <p>
+            
+            
+            Welcome to <strong>Georg</strong>, your all-in-one solution for efficiently managing customer complaints and
+            claims within Microsoft Business Central. Georg facilitates the registration, tracking, and follow-up of
+            customer issues, ensuring nothing falls through the cracks in your service quality management.</p>
+
+        <h2>What You Can Do From This Page</h2>
+        <p>The Georg main menu serves as your central hub for all complaint and claim management activities. From here,
+            you can access all the key functions of the system:</p>
+
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h3 class="feature-title">Create a New Issue</h3>
+                <p>Start recording a new customer complaint or claim. Georg will automatically assign the next number in
+                    your configured number series. <a href="georg-new-complaint-help.html">Learn more about creating a
+                        new complaint</a>.</p>
+            </div>
+
+            <div class="feature-item">
+                <h3 class="feature-title">View Open Issues</h3>
+                <p>Access and manage all currently active complaints that require attention, whether they're new, in
+                    processing, or on hold.
+                    <br />
+                    <a href="georg-open-issues-help.html">Learn more about managing open issues</a>.
+                </p>
+            </div>
+
+            <div class="feature-item">
+                <h3 class="feature-title">View Closed Issues</h3>
+                <p>Review previously resolved complaints for reference, analysis, and reporting purposes. <a
+                        href="georg-closed-issues-help.html">Learn more about closed issues</a>.</p>
+            </div>
+
+            <div class="feature-item">
+                <h3 class="feature-title">Setup Default Values</h3>
+                <p>Configure the system for first-time use, including number series and master data. <a
+                        href="georg-setup-help.html">Learn more about setup configuration</a>.</p>
+            </div>
+        </div>
+
+        <p>You can also access master data configuration for <strong>Business Units</strong>, <strong>Reasons</strong>,
+            <strong>Origins</strong>, <strong>Categories</strong>, and <strong>Types</strong> directly from the main
+            menu.
+        </p>
+
+        <div class="note">
+            <p><strong>Note:</strong> If this is your first time using Georg, we recommend starting with "Setup Default
+                Values" to configure your number series and import default master data values.</p>
+        </div>
+
+        <h2>Getting Started</h2>
+        <p>To begin managing claims and complaints with Georg:</p>
+        <ol>
+            <li>Ensure default values are set up (if not already done) - <a href="georg-setup-help.html">Configure
+                    master data setup</a></li>
+            <li>Click "Create a New Issue" to register your first complaint</li>
+            <li>Fill in the required information such as customer details, reason, and category</li>
+            <li>Change the status to "Processing" once you begin working on the issue</li>
+            <li>Document resolution actions as you work through the complaint</li>
+            <li>Close the issue once it's fully resolved</li>
+        </ol>
+
+        <div class="tip">
+            <p><strong>Pro Tip:</strong> Establish team standards for how incidents and resolutions should be documented
+                to ensure consistency across your organization. This will make reporting and analysis much more
+                effective.</p>
+        </div>
+
+        <h2>Finding Georg in Business Central</h2>
+        <p>You can quickly access Georg at any time by:</p>
+        <ol>
+            <li>Launching your Microsoft Business Central application</li>
+            <li>Typing either "Georg" or "claims" in the search bar at the top</li>
+            <li>Clicking on "Georg - Claims & Complaints" when it appears in the dropdown menu</li>
+        </ol>
+    </div>
+</body>
+
+</html>

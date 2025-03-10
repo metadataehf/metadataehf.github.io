@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Georg - Setup Configuration Help</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        h1 {
+            color: #e05d6f;
+            border-bottom: 1px solid #e05d6f;
+            padding-bottom: 10px;
+            font-weight: 600;
+        }
+        h2 {
+            color: #e05d6f;
+            margin-top: 25px;
+            font-weight: 500;
+        }
+        .note {
+            background-color: #fff5f6;
+            border-left: 4px solid #e05d6f;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .warning {
+            background-color: #fff6e9;
+            border-left: 4px solid #e8a87c;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            margin: 15px 0;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        ul, ol {
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .tip {
+            background-color: #f7f9fa;
+            border-left: 4px solid #b5838d;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+        }
+        strong {
+            color: #c45063;
+        }
+        .container {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .header-image {
+            background-color: #f9e8ea;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .header-image svg {
+            max-width: 120px;
+            height: auto;
+        }
+        .setup-step {
+            background-color: #fefefe;
+            border: 1px solid #f0f0f0;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            transition: transform 0.2s;
+        }
+        .setup-step:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #e05d6f;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+        }
+        .step-title {
+            color: #c45063;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .master-data-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .data-type {
+            background-color: #fbf5f5;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+        }
+        .data-count {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e05d6f;
+            margin: 10px 0;
+        }
+        .data-name {
+            font-weight: 500;
+        }
+        @media (max-width: 700px) {
+            .master-data-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 500px) {
+            .master-data-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-image">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                <path fill="#e05d6f" d="M32 2C15.432 2 2 15.432 2 32s13.432 30 30 30 30-13.432 30-30S48.568 2 32 2zm0 56c-14.359 0-26-11.641-26-26S17.641 6 32 6s26 11.641 26 26-11.641 26-26 26z"/>
+                <path fill="#e05d6f" d="M42 46h4v4h-4zM42 14h4v24h-4zM18 46h4v4h-4zM18 14h4v24h-4zM26 18h12v4H26zM26 26h12v4H26zM26 34h12v4H26zM26 42h12v4H26z"/>
+            </svg>
+        </div>
+        
+        <h1>Georg - Setup Configuration</h1>
+        
+        <p>Before diving into daily operations, you need to configure Georg to match your business needs. This page allows you to set up the essential components that will structure your complaint and claims management process.</p>
+        
+        <div class="note">
+            <p><strong>Note:</strong> Setup should be completed before you begin using the system. However, you can return to these settings at any time to make adjustments as your business requirements evolve.</p>
+        </div>
+
+        <h2>First-Time Configuration Steps</h2>
+        
+        <div class="setup-step">
+            <div class="step-title"><span class="step-number">1</span> Setting Up Number Series</div>
+            <p>The number series determines how your complaints and claims will be numbered in the system:</p>
+            
+            <ul>
+                <li>Navigate to "Setup default values" in the main menu</li>
+                <li>Click <strong>"Add Default Number Series"</strong> to use the pre-configured numbering pattern (starting with ISSUE0001)</li>
+                <li>Alternatively, click into the "Complaints Nos." field to define your own custom numbering pattern</li>
+            </ul>
+            
+            <p>A well-designed number series can help with tracking and sorting issues. Consider your organization's existing numbering conventions when making this choice.</p>
+        </div>
+        
+        <div class="setup-step">
+            <div class="step-title"><span class="step-number">2</span> Importing Master Data</div>
+            <p>Georg comes with pre-defined master data to help you get started quickly:</p>
+            
+            <ul>
+                <li>Click <strong>"Add Default Master Data"</strong> to instantly populate your system with 42 generic default values</li>
+                <li>This time-saving feature adds ready-to-use entries across all master data categories</li>
+            </ul>
+            
+            <div class="master-data-grid">
+                <div class="data-type">
+                    <div class="data-count">5</div>
+                    <div class="data-name">Business Units</div>
+                    <small>Perfect for departmental organization</small>
+                </div>
+                <div class="data-type">
+                    <div class="data-count">12</div>
+                    <div class="data-name">Common Reasons</div>
+                    <small>Covering typical customer issues</small>
+                </div>
+                <div class="data-type">
+                    <div class="data-count">13</div>
+                    <div class="data-name">Origins</div>
+                    <small>Identifying where complaints come from</small>
+                </div>
+                <div class="data-type">
+                    <div class="data-count">10</div>
+                    <div class="data-name">Categories</div>
+                    <small>For strategic grouping and analysis</small>
+                </div>
+                <div class="data-type">
+                    <div class="data-count">2</div>
+                    <div class="data-name">Types</div>
+                    <small>"Critical" and "Regular" issues</small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="setup-step">
+            <div class="step-title"><span class="step-number">3</span> Customizing Master Data</div>
+            <p>After importing the default values, you can customize them to fit your specific business needs:</p>
+            
+            <ol>
+                <li>Return to the main menu after completing the initial setup</li>
+                <li>Click on any of the master data categories (Business Units, Reasons, Origins, etc.)</li>
+                <li>Add, modify, or remove entries as needed to reflect your organization's terminology and structure</li>
+            </ol>
+            
+            <div class="tip">
+                <p><strong>Pro Tip:</strong> When designing your master data structure, consider your reporting needs first. What information will management need to make decisions about process improvements?</p>
+            </div>
+        </div>
+        
+        <div class="warning">
+            <p><strong>Important:</strong> These defaults are designed as a starting point. You should review and customize them to match your specific business terminology and processes. Well-structured master data will make reporting and analysis much more effective.</p>
+        </div>
+        
+        <h2>Moving Master Data Between Systems</h2>
+        <p>If you need to transfer your master data configuration between different Business Central environments:</p>
+        <ul>
+            <li>Use the <strong>Export</strong> function to save your master data to a file</li>
+            <li>Use the <strong>Import</strong> function to load previously exported master data into a different system</li>
+        </ul>
+        <p>This is particularly useful when setting up test environments or when deploying to multiple companies within your organization.</p>
+    </div>
+</body>
+</html>

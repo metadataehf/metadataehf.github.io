@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Georg - Master Data Management</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        h1 {
+            color: #e05d6f;
+            border-bottom: 1px solid #e05d6f;
+            padding-bottom: 10px;
+            font-weight: 600;
+        }
+        h2 {
+            color: #e05d6f;
+            margin-top: 25px;
+            font-weight: 500;
+        }
+        h3 {
+            color: #c45063;
+            font-weight: 500;
+        }
+        .note {
+            background-color: #fff5f6;
+            border-left: 4px solid #e05d6f;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            margin: 15px 0;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        ul, ol {
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .tip {
+            background-color: #f7f9fa;
+            border-left: 4px solid #b5838d;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+        }
+        strong {
+            color: #c45063;
+        }
+        .container {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .header-image {
+            background-color: #f9e8ea;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .header-image svg {
+            max-width: 120px;
+            height: auto;
+        }
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        .category {
+            background-color: #fefefe;
+            border: 1px solid #f0f0f0;
+            border-radius: 6px;
+            padding: 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .category:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .category-title {
+            color: #e05d6f;
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .category-icon {
+            float: right;
+            width: 40px;
+            height: 40px;
+            background-color: #f9e8ea;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px;
+        }
+        .category-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: #e05d6f;
+        }
+        .examples {
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            padding: 10px 15px;
+            margin: 10px 0;
+        }
+        .examples-title {
+            font-weight: 500;
+            color: #777;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        .examples-list {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .examples-list li {
+            margin-bottom: 3px;
+            font-size: 14px;
+        }
+        .usage {
+            font-style: italic;
+            margin-top: 10px;
+            color: #666;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        th {
+            background-color: #f8e5e7;
+            border: 1px solid #e6d0d3;
+            padding: 12px;
+            text-align: left;
+            color: #c45063;
+        }
+        td {
+            border: 1px solid #e6d0d3;
+            padding: 12px;
+            text-align: left;
+        }
+        tr:nth-child(even) {
+            background-color: #fdf8f9;
+        }
+        tr:hover {
+            background-color: #f9eced;
+        }
+        .action-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .action-button {
+            background-color: #fefefe;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 8px 15px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: all 0.2s;
+        }
+        .action-button:hover {
+            background-color: #f9e8ea;
+            border-color: #e6d0d3;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+        .action-icon {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+            fill: #e05d6f;
+        }
+        .action-text {
+            color: #c45063;
+            font-weight: 500;
+        }
+        .best-practices {
+            counter-reset: practice;
+            padding-left: 0;
+        }
+        .best-practices li {
+            position: relative;
+            list-style: none;
+            margin-bottom: 15px;
+            padding-left: 35px;
+        }
+        .best-practices li::before {
+            counter-increment: practice;
+            content: counter(practice);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 25px;
+            height: 25px;
+            background-color: #e05d6f;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        @media (max-width: 700px) {
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            .action-buttons {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-image">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                <path fill="#e05d6f" d="M48 8H16c-4.4 0-8 3.6-8 8v32c0 4.4 3.6 8 8 8h32c4.4 0 8-3.6 8-8V16c0-4.4-3.6-8-8-8zm4 40c0 2.2-1.8 4-4 4H16c-2.2 0-4-1.8-4-4V16c0-2.2 1.8-4 4-4h32c2.2 0 4 1.8 4 4v32z"/>
+                <path fill="#e05d6f" d="M44 24H20c-1.1 0-2 .9-2 2s.9 2 2 2h24c1.1 0 2-.9 2-2s-.9-2-2-2zM44 32H20c-1.1 0-2 .9-2 2s.9 2 2 2h24c1.1 0 2-.9 2-2s-.9-2-2-2zM44 40H20c-1.1 0-2 .9-2 2s.9 2 2 2h24c1.1 0 2-.9 2-2s-.9-2-2-2zM18 17c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zM18 25c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zM18 33c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zM18 41c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2z"/>
+            </svg>
+        </div>
+        
+        <h1>Georg - Master Data Management</h1>
+        
+        <p>Master data in Georg provides the structure and classification for your complaints and claims. Well-designed master data is essential for effective reporting and analysis, enabling you to identify patterns and make informed business decisions.</p>
+        
+        <h2>Types of Master Data</h2>
+        
+        <div class="categories-grid">
+            <div class="category">
+                <div class="category-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                </div>
+                <h3 class="category-title">Business Units</h3>
+                <p>Departments or functional areas in your organization responsible for handling specific types of complaints.</p>
+                <div class="examples">
+                    <div class="examples-title">Examples:</div>
+                    <ul class="examples-list">
+                        <li>Sales</li>
+                        <li>Accounting</li>
+                        <li>Warehouse</li>
+                        <li>Customer Service</li>
+                        <li>Technical Support</li>
+                    </ul>
+                </div>
+                <p class="usage">Assigns responsibility and enables department-specific reporting</p>
+            </div>
+            
+            <div class="category">
+                <div class="category-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    </svg>
+                </div>
+                <h3 class="category-title">Reasons</h3>
+                <p>The specific issues that prompted the customer complaint.</p>
+                <div class="examples">
+                    <div class="examples-title">Examples:</div>
+                    <ul class="examples-list">
+                        <li>Invoice Error</li>
+                        <li>Late Delivery</li>
+                        <li>Product Defect</li>
+                        <li>Incorrect Order</li>
+                        <li>Missing Items</li>
+                    </ul>
+                </div>
+                <p class="usage">Identifies common problem areas and tracks issue frequency</p>
+            </div>
+            
+            <div class="category">
+                <div class="category-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm0 15l-5-5h3V9h4v4h3l-5 5z"/>
+                    </svg>
+                </div>
+                <h3 class="category-title">Origins</h3>
+                <p>How or where the complaint was initially received.</p>
+                <div class="examples">
+                    <div class="examples-title">Examples:</div>
+                    <ul class="examples-list">
+                        <li>Customer</li>
+                        <li>Email</li>
+                        <li>Phone Call</li>
+                        <li>Website</li>
+                        <li>Social Media</li>
+                    </ul>
+                </div>
+                <p class="usage">Helps understand how customers prefer to communicate issues</p>
+            </div>
+            
+            <div class="category">
+                <div class="category-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M14 10H2v2h12v-2zm0-4H2v2h12V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM2 16h8v-2H2v2z"/>
+                    </svg>
+                </div>
+                <h3 class="category-title">Categories</h3>
+                <p>Broader groupings for strategic analysis of complaints.</p>
+                <div class="examples">
+                    <div class="examples-title">Examples:</div>
+                    <ul class="examples-list">
+                        <li>Billing</li>
+                        <li>Shipping</li>
+                        <li>Product Quality</li>
+                        <li>Service</li>
+                        <li>Communication</li>
+                    </ul>
+                </div>
+                <p class="usage">Enables high-level analysis and reporting of issue types</p>
+            </div>
+            
+            <div class="category">
+                <div class="category-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M14 17H4v2h10v-2zm6-8H4v2h16V9zM4 15h16v-2H4v2zM4 5v2h16V5H4z"/>
+                    </svg>
+                </div>
+                <h3 class="category-title">Types</h3>
+                <p>Classification of complaint severity or priority.</p>
+                <div class="examples">
+                    <div class="examples-title">Examples:</div>
+                    <ul class="examples-list">
+                        <li>Critical</li>
+                        <li>Regular</li>
+                    </ul>
+                </div>
+                <p class="usage">Helps prioritize which issues need immediate attention</p>
+            </div>
+        </div>
+        
+        <h2>Managing Master Data</h2>
+        
+        <p>On each master data page, you can perform the following actions:</p>
+        
+        <div class="action-buttons">
+            <div class="action-button">
+                <svg class="action-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                </svg>
+                <span class="action-text">Add new entries</span>
+            </div>
+            
+            <div class="action-button">
+                <svg class="action-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+                </svg>
+                <span class="action-text">Edit existing entries</span>
+            </div>
+            
+            <div class="action-button">
+                <svg class="action-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+                </svg>
+                <span class="action-text">Delete entries</span>
+            </div>
+            
+            <div class="action-button">
+                <svg class="action-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                </svg>
+                <span class="action-text">Import data</span>
+            </div>
+            
+            <div class="action-button">
+                <svg class="action-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2z"/>
+                </svg>
+                <span class="action-text">Export data</span>
+            </div>
+        </div>
+        
+        <div class="note">
+            <p><strong>Note:</strong> You cannot delete master data values that are currently in use by existing complaints or claims. This ensures data integrity and prevents orphaned records.</p>
+        </div>
+        
+        <h2>Master Data Example</h2>
+        
+        <p>Here's an example of what the Reasons master data page might look like:</p>
+        
+        <table>
+            <tr>
+                <th>Code</th>
+                <th>Description</th>
+                <th>Active</th>
+            </tr>
+            <tr>
+                <td>INVOICE</td>
+                <td>Invoice Error or Issue</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>DELIVERY</td>
+                <td>Late or Missed Delivery</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>PRODUCT</td>
+                <td>Product Quality Issue</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>ORDER</td>
+                <td>Incorrect Order</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>MISSING</td>
+                <td>Missing Items</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td><em>New entry...</em></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        
+        <h2>Best Practices for Master Data Management</h2>
+        
+        <ol class="best-practices">
+            <li><strong>Be Consistent</strong> - Use clear, consistent naming conventions across all master data types. For example, use all uppercase for codes and proper case for descriptions.</li>
+            
+            <li><strong>Limit Proliferation</strong> - Avoid creating too many similar categories or reasons. Having too many options can complicate reporting and make it difficult to identify patterns.</li>
+            
+            <li><strong>Review Regularly</strong> - Periodically assess if your master data still reflects your business needs. As your business evolves, you may need to add, modify, or deactivate certain values.</li>
+            
+            <li><strong>Document Meanings</strong> - Ensure all team members understand what each value represents. Consider creating a reference guide that explains when to use each option.</li>
+            
+            <li><strong>Think About Reporting</strong> - Design your master data structure with reporting needs in mind. The way you categorize complaints will directly impact your ability to analyze trends effectively.</li>
+        </ol>
+        
+        <div class="tip">
+            <p><strong>Pro Tip:</strong> When designing your master data structure, start by identifying what information management will need to make decisions about process improvements. This ensures your classification system captures the most valuable insights.</p>
+        </div>
+        
+        <h2>Moving Master Data Between Systems</h2>
+        
+        <p>Georg allows you to export and import master data, which is particularly useful when:</p>
+        
+        <ul>
+            <li>Setting up a new Business Central environment</li>
+            <li>Transferring configurations between test and production environments</li>
+            <li>Standardizing master data across multiple companies in your organization</li>
+        </ul>
+        
+        <p>To transfer master data:</p>
+        
+        <ol>
+            <li>In the source system, use the <strong>Export</strong> function to save your master data to a file</li>
+            <li>Transfer the file to the target system</li>
+            <li>In the target system, use the <strong>Import</strong> function to load the master data</li>
+        </ol>
+    </div>
+</body>
+</html>

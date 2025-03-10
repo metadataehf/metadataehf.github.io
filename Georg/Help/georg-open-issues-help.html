@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Georg - Open Issues List</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        h1 {
+            color: #e05d6f;
+            border-bottom: 1px solid #e05d6f;
+            padding-bottom: 10px;
+            font-weight: 600;
+        }
+        h2 {
+            color: #e05d6f;
+            margin-top: 25px;
+            font-weight: 500;
+        }
+        h3 {
+            color: #c45063;
+            font-weight: 500;
+        }
+        .note {
+            background-color: #fff5f6;
+            border-left: 4px solid #e05d6f;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .warning {
+            background-color: #fff6e9;
+            border-left: 4px solid #e8a87c;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            margin: 15px 0;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        ul, ol {
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .tip {
+            background-color: #f7f9fa;
+            border-left: 4px solid #b5838d;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+        }
+        strong {
+            color: #c45063;
+        }
+        .container {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .header-image {
+            background-color: #f9e8ea;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .header-image svg {
+            max-width: 120px;
+            height: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        th {
+            background-color: #f8e5e7;
+            border: 1px solid #e6d0d3;
+            padding: 12px;
+            text-align: left;
+            color: #c45063;
+        }
+        td {
+            border: 1px solid #e6d0d3;
+            padding: 12px;
+            text-align: left;
+        }
+        tr:nth-child(even) {
+            background-color: #fdf8f9;
+        }
+        tr:hover {
+            background-color: #f9eced;
+        }
+        .status-box {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: 500;
+            margin-right: 10px;
+        }
+        .status-new {
+            background-color: #f2f2f2;
+            color: #555;
+        }
+        .status-processing {
+            background-color: #e8f4fd;
+            color: #0078d4;
+        }
+        .status-onhold {
+            background-color: #fff4ce;
+            color: #605e5c;
+        }
+        .action-card {
+            background-color: #fefefe;
+            border: 1px solid #f0f0f0;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.2s;
+        }
+        .action-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .action-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #f9e8ea;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        .action-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: #e05d6f;
+        }
+        .action-content {
+            flex-grow: 1;
+        }
+        .action-title {
+            font-weight: 600;
+            color: #c45063;
+            margin-bottom: 5px;
+        }
+        .list-preview {
+            background-color: #f9f9f9;
+            border: 1px solid #e6e6e6;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            overflow: auto;
+        }
+        .list-preview table {
+            min-width: 700px;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .badge-customer {
+            background-color: #e1f5fe;
+            color: #0277bd;
+        }
+        .badge-invoice {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        .badge-shipping {
+            background-color: #fff3e0;
+            color: #ef6c00;
+        }
+        @media (max-width: 600px) {
+            .action-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .action-icon {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-image">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                <path fill="#e05d6f" d="M56 8H8c-2.2 0-4 1.8-4 4v40c0 2.2 1.8 4 4 4h48c2.2 0 4-1.8 4-4V12c0-2.2-1.8-4-4-4zm0 44H8V12h48v40z"/>
+                <path fill="#e05d6f" d="M16 24h32v4H16zM16 32h32v4H16zM16 40h32v4H16z"/>
+            </svg>
+        </div>
+        
+        <h1>Georg - Open Issues List</h1>
+        
+        <p>This page displays all open complaints and claims in your system that require attention. Open issues include those with status "New," "Processing," and "On Hold."</p>
+        
+        <div class="warning">
+            <p><strong>Important:</strong> Regular review of open issues is essential to ensure nothing falls through the cracks. Consider scheduling weekly reviews of all open complaints to maintain timely resolutions.</p>
+        </div>
+        
+        <h2>Working with the Open Issues List</h2>
+        
+        <p>The Open Issues list provides a comprehensive view of all active complaints that need attention. From this view, you can:</p>
+        
+        <div class="action-card">
+            <div class="action-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                </svg>
+            </div>
+            <div class="action-content">
+                <div class="action-title">View Complaint Details</div>
+                <p>Click on any issue in the list to open its full details. This allows you to review all information about the complaint and make updates as needed.</p>
+            </div>
+        </div>
+        
+        <div class="action-card">
+            <div class="action-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"/>
+                </svg>
+            </div>
+            <div class="action-content">
+                <div class="action-title">Filter and Sort</div>
+                <p>Use the filter fields at the top of each column to find specific issues based on criteria like customer name, reason, or date. Click on column headers to sort the list in ascending or descending order.</p>
+            </div>
+        </div>
+        
+        <div class="action-card">
+            <div class="action-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                </svg>
+            </div>
+            <div class="action-content">
+                <div class="action-title">Export to Excel</div>
+                <p>Use the export option to analyze data in Microsoft Excel. This is useful for creating custom reports or sharing information with team members who don't have access to Business Central.</p>
+            </div>
+        </div>
+        
+        <h2>Understanding Issue Statuses</h2>
+        
+        <table>
+            <tr>
+                <th>Status</th>
+                <th>Description</th>
+                <th>Action Required</th>
+            </tr>
+            <tr>
+                <td><span class="status-box status-new">New</span></td>
+                <td>Recently registered issue that hasn't been started</td>
+                <td>Change to "Processing" when work begins</td>
+            </tr>
+            <tr>
+                <td><span class="status-box status-processing">Processing</span></td>
+                <td>Active issue currently being worked on</td>
+                <td>Document actions in the "Resolution Actions" section</td>
+            </tr>
+            <tr>
+                <td><span class="status-box status-onhold">On Hold</span></td>
+                <td>Issue waiting for information or external action</td>
+                <td>Document reason for hold and expected timeframe</td>
+            </tr>
+        </table>
+        
+        <h2>List View Preview</h2>
+        
+        <p>The Open Issues list typically looks like this:</p>
+        
+        <div class="list-preview">
+            <table>
+                <tr>
+                    <th>Number</th>
+                    <th>Customer</th>
+                    <th>Registration Date</th>
+                    <th>Reason</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>ISSUE0042</td>
+                    <td>Contoso Ltd.</td>
+                    <td>10/03/2025</td>
+                    <td><span class="badge badge-invoice">INVOICE</span></td>
+                    <td>BILLING</td>
+                    <td><span class="status-box status-new">New</span></td>
+                </tr>
+                <tr>
+                    <td>ISSUE0041</td>
+                    <td>Fabrikam Inc.</td>
+                    <td>07/03/2025</td>
+                    <td><span class="badge badge-shipping">DELIVERY</span></td>
+                    <td>SHIPPING</td>
+                    <td><span class="status-box status-processing">Processing</span></td>
+                </tr>
+                <tr>
+                    <td>ISSUE0040</td>
+                    <td>Adventure Works</td>
+                    <td>05/03/2025</td>
+                    <td><span class="badge badge-customer">PRODUCT</span></td>
+                    <td>QUALITY</td>
+                    <td><span class="status-box status-onhold">On Hold</span></td>
+                </tr>
+            </table>
+        </div>
+        
+        <h2>Managing Issue Progress</h2>
+        
+        <p>When you open an issue from this list, you can:</p>
+        
+        <ol>
+            <li>Update the incident details with new information as it becomes available</li>
+            <li>Add resolution actions that have been taken to address the complaint</li>
+            <li>Change the status as the issue progresses through your resolution process</li>
+            <li>Add additional information or detailed descriptions</li>
+        </ol>
+        
+        <div class="note">
+            <p><strong>Note:</strong> The "Open Issues" list automatically refreshes when you return to it, showing the most current information about all active complaints.</p>
+        </div>
+        
+        <div class="tip">
+            <p><strong>Pro Tip:</strong> Monitor response times by comparing registration dates with the current date for open issues. This can help identify bottlenecks in your resolution process and ensure you're meeting your service level agreements (SLAs).</p>
+        </div>
+    </div>
+</body>
+</html>
