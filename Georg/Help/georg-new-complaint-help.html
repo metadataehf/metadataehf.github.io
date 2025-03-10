@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,67 +15,80 @@
             padding: 20px;
             background-color: #fafafa;
         }
+
         h1 {
             color: #e05d6f;
             border-bottom: 1px solid #e05d6f;
             padding-bottom: 10px;
             font-weight: 600;
         }
+
         h2 {
             color: #e05d6f;
             margin-top: 25px;
             font-weight: 500;
         }
+
         h3 {
             color: #c45063;
             font-weight: 500;
         }
+
         .note {
             background-color: #fff5f6;
             border-left: 4px solid #e05d6f;
             padding: 15px;
             margin: 20px 0;
             border-radius: 0 4px 4px 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
+
         img {
             max-width: 100%;
             height: auto;
             border: 1px solid #ddd;
             margin: 15px 0;
             border-radius: 4px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
-        ul, ol {
+
+        ul,
+        ol {
             padding-left: 25px;
         }
+
         li {
             margin-bottom: 8px;
         }
+
         .tip {
             background-color: #f7f9fa;
             border-left: 4px solid #b5838d;
             padding: 15px;
             margin: 20px 0;
             border-radius: 0 4px 4px 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
+
         code {
             background-color: #f4f4f4;
             padding: 2px 5px;
             border-radius: 3px;
             font-family: Consolas, Monaco, 'Andale Mono', monospace;
         }
+
         strong {
             color: #c45063;
         }
+
         .container {
             background-color: white;
             padding: 25px;
             border-radius: 8px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
             margin-bottom: 30px;
         }
+
         .header-image {
             background-color: #f9e8ea;
             padding: 20px;
@@ -82,42 +96,50 @@
             text-align: center;
             margin-bottom: 25px;
         }
+
         .header-image svg {
             max-width: 120px;
             height: auto;
         }
+
         .required {
             color: #e05d6f;
             font-weight: bold;
         }
+
         .section {
             background-color: #fefefe;
             border: 1px solid #f0f0f0;
             border-radius: 6px;
             padding: 20px;
             margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
             transition: transform 0.2s;
         }
+
         .section:hover {
             transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
+
         .field-list {
             display: grid;
             grid-template-columns: 1fr 2fr;
             gap: 10px;
             margin: 15px 0;
         }
+
         .field-name {
             font-weight: 500;
             padding: 8px;
             background-color: #f9f2f3;
             border-radius: 4px;
         }
+
         .field-desc {
             padding: 8px;
         }
+
         .status-box {
             display: inline-block;
             padding: 6px 12px;
@@ -126,30 +148,37 @@
             margin-right: 10px;
             margin-bottom: 10px;
         }
+
         .status-new {
             background-color: #f2f2f2;
             color: #555;
         }
+
         .status-processing {
             background-color: #e8f4fd;
             color: #0078d4;
         }
+
         .status-onhold {
             background-color: #fff4ce;
             color: #605e5c;
         }
+
         .status-closed {
             background-color: #dff6dd;
             color: #107c10;
         }
+
         .steps {
             counter-reset: step;
         }
+
         .step-item {
             position: relative;
             padding-left: 40px;
             margin-bottom: 20px;
         }
+
         .step-item::before {
             counter-increment: step;
             content: counter(step);
@@ -166,6 +195,7 @@
             justify-content: center;
             font-weight: bold;
         }
+
         @media (max-width: 600px) {
             .field-list {
                 grid-template-columns: 1fr;
@@ -173,19 +203,21 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <div class="header-image">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-                <path fill="#e05d6f" d="M56 8H40c0-4.4-3.6-8-8-8s-8 3.6-8 8H8c-1.1 0-2 .9-2 2v44c0 1.1.9 2 2 2h48c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM32 4c2.2 0 4 1.8 4 4s-1.8 4-4 4-4-1.8-4-4 1.8-4 4-4zm22 48H10V12h8c0 4.4 3.6 8 8 8h8c4.4 0 8-3.6 8-8h12v40z"/>
-                <path fill="#e05d6f" d="M44 30H20c-1.1 0-2 .9-2 2s.9 2 2 2h24c1.1 0 2-.9 2-2s-.9-2-2-2zM44 38H20c-1.1 0-2 .9-2 2s.9 2 2 2h24c1.1 0 2-.9 2-2s-.9-2-2-2zM44 46H20c-1.1 0-2 .9-2 2s.9 2 2 2h24c1.1 0 2-.9 2-2s-.9-2-2-2z"/>
-            </svg>
-        </div>
-        
-        <h1>Georg - Creating a New Complaint</h1>
-        
-        <p>This page allows you to register new customer complaints or claims in the system. Each complaint is automatically assigned the next number in your configured number series.</p>
-        
+        <a href="georg-main-help.html">
+            <img src="GeorgLogo.png" alt="Georg Logo"
+                style="display: block; margin: 20px auto; max-width: 100px; border: none; box-shadow: none; padding: 10px;">
+        </a>
+        <p></p>
+        <h1 style="text-align: center;">Georg - Creating a New Complaint</h1>
+        <p style="text-align: center;"><a href="georg-main-help.html">Back to Main Help Page</a></p>
+        <p>
+
+        <p>This page allows you to register new customer complaints or claims in the system. Each complaint is
+            automatically assigned the next number in your configured number series.</p>
+
         <h2>Starting a New Complaint</h2>
         <p>To create a new complaint or claim:</p>
         <div class="steps">
@@ -193,7 +225,8 @@
                 <p>From the Georg main menu, click <strong>"Create a New Issue"</strong></p>
             </div>
             <div class="step-item">
-                <p>The system will automatically open a new complaint card with the next available number from your series</p>
+                <p>The system will automatically open a new complaint card with the next available number from your
+                    series</p>
             </div>
             <div class="step-item">
                 <p>Fill in the required fields (marked with <span class="required">*</span>)</p>
@@ -202,39 +235,40 @@
                 <p>Change the status to "Processing" when you begin actively working on the issue</p>
             </div>
         </div>
-        
+
         <h2>Required Information</h2>
         <p>To create a new complaint, you need to fill in these essential details:</p>
-        
+
         <div class="field-list">
             <div class="field-name"><span class="required">*</span> Registration Date</div>
             <div class="field-desc">When the complaint was received (defaults to today)</div>
-            
+
             <div class="field-name"><span class="required">*</span> Registered By</div>
             <div class="field-desc">The employee who received the complaint</div>
-            
+
             <div class="field-name"><span class="required">*</span> Business Unit</div>
             <div class="field-desc">The department responsible for handling the issue</div>
-            
+
             <div class="field-name"><span class="required">*</span> Customer Number/Name</div>
             <div class="field-desc">The customer who submitted the complaint</div>
-            
+
             <div class="field-name"><span class="required">*</span> Origin</div>
             <div class="field-desc">How the complaint was received (e.g., CUSTOMER, EMAIL, PHONE)</div>
-            
+
             <div class="field-name"><span class="required">*</span> Reason</div>
             <div class="field-desc">The primary reason for the complaint (e.g., INVOICE, DELIVERY)</div>
-            
+
             <div class="field-name"><span class="required">*</span> Category</div>
             <div class="field-desc">The category for classification (e.g., BILLING, SHIPPING)</div>
         </div>
-        
+
         <div class="note">
-            <p><strong>Note:</strong> Some fields may be automatically filled in with default values. Review these to ensure they're appropriate for the current complaint.</p>
+            <p><strong>Note:</strong> Some fields may be automatically filled in with default values. Review these to
+                ensure they're appropriate for the current complaint.</p>
         </div>
-        
+
         <h2>Complaint Form Sections</h2>
-        
+
         <div class="section">
             <h3>Incident Logging</h3>
             <p>Use this section to document what happened and who was involved. This section should include:</p>
@@ -244,9 +278,10 @@
                 <li>How the complaint was received</li>
                 <li>Who was involved in the incident</li>
             </ul>
-            <p>Thorough documentation here helps with understanding the issue and preventing similar problems in the future.</p>
+            <p>Thorough documentation here helps with understanding the issue and preventing similar problems in the
+                future.</p>
         </div>
-        
+
         <div class="section">
             <h3>Resolution Actions</h3>
             <p>Document all steps taken to resolve the issue, including:</p>
@@ -258,7 +293,7 @@
             </ul>
             <p>This section creates an audit trail of all efforts made to resolve the customer's issue.</p>
         </div>
-        
+
         <div class="section">
             <h3>Additional Information</h3>
             <p>Use this section for any relevant details that don't fit in the other sections, such as:</p>
@@ -268,7 +303,7 @@
                 <li>Special circumstances</li>
             </ul>
         </div>
-        
+
         <div class="section">
             <h3>Descriptions</h3>
             <p>Space for more detailed explanations if needed. This can include:</p>
@@ -278,27 +313,31 @@
                 <li>Detailed technical explanations</li>
             </ul>
         </div>
-        
+
         <h2>Managing Complaint Status</h2>
         <p>Each complaint can have one of the following statuses:</p>
-        
+
         <div>
             <span class="status-box status-new">New</span>
             <span class="status-box status-processing">Processing</span>
             <span class="status-box status-onhold">On Hold</span>
             <span class="status-box status-closed">Closed</span>
         </div>
-        
+
         <p>After filling in the initial information:</p>
         <ul>
             <li>Click <strong>"Change Status to Processing"</strong> to indicate active work has begun</li>
-            <li>Use <strong>"Change Status to On Hold"</strong> if you're waiting for information or external action</li>
+            <li>Use <strong>"Change Status to On Hold"</strong> if you're waiting for information or external action
+            </li>
             <li>Select <strong>"Change Status to Closed"</strong> once the issue is fully resolved</li>
         </ul>
-        
+
         <div class="tip">
-            <p><strong>Pro Tip:</strong> Be thorough in your documentation. Complete information makes it easier to track patterns and implement systemic improvements. Consider standardizing how your team documents complaints to ensure consistency.</p>
+            <p><strong>Pro Tip:</strong> Be thorough in your documentation. Complete information makes it easier to
+                track patterns and implement systemic improvements. Consider standardizing how your team documents
+                complaints to ensure consistency.</p>
         </div>
     </div>
 </body>
+
 </html>
