@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Central – Uppsetning</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+    <a class="brand" href="Index.html">Smart Central</a>
+    <nav>
+        <a href="Index.html">Forsíða</a>
+        <a href="Features.html">Eiginleikar</a>
+        <a href="GettingStarted.html" aria-current="page">Uppsetning</a>
+        <a href="Workflow.html">Verkflæði</a>
+        <a href="FAQ.html">Spurningar</a>
+    </nav>
+</header>
+
+<div class="page">
+
+    <header class="hero">
+        <div class="eyebrow">Uppsetning</div>
+        <h1>Byrjum á byrjuninni</h1>
+        <p class="lede">
+            Leiðbeiningar fyrir kerfisstjóra um hvernig Smart Central er sett upp í Business Central. Áætlaður tími: 30–60 mínútur, þar af mestur tími í að bíða eftir samþykki frá Íslandsbanka ef sú samþætting á við.
+        </p>
+    </header>
+
+    <h2>Yfirlit yfir uppsetninguna</h2>
+    <p>
+        Uppsetningin skiptist í eftirfarandi þrep:
+    </p>
+    <ol>
+        <li>Setja upp viðbótina í Business Central.</li>
+        <li>Veita réttindi (<em>SmartEDocsPrm</em> leyfispakka).</li>
+        <li>Stilla Claude API-lykil.</li>
+        <li>Stilla tölvupóstreikning fyrir daglegt yfirlit.</li>
+        <li>Setja upp verkröðun (Job Queue) fyrir sjálfvirka vinnslu og daglegt yfirlit.</li>
+        <li>Tengja við Íslandsbanka (ef á við).</li>
+        <li>Setja sjálfgefna lánadrottna og athuga lánadrottnaspjald.</li>
+        <li>Prufa sjálfvirka vinnslu með einu skjali.</li>
+    </ol>
+
+    <h2>Skref fyrir skref</h2>
+
+    <ol class="steps">
+        <li>
+            <h4>Setja upp viðbótina</h4>
+            <p>
+                Opnaðu <em>„Extension Management“</em> í Business Central og hladdu inn Smart Central viðbótinni (.app skrá). Bíddu þar til staðan verður <strong>„Installed“</strong>.
+            </p>
+            <figure class="screenshot">
+                <div class="placeholder">[ SKJÁSKOT: Extension Management með Smart Central uppsetningu ]</div>
+                <figcaption>Smart Central uppsett í Extension Management</figcaption>
+            </figure>
+        </li>
+
+        <li>
+            <h4>Veita réttindi</h4>
+            <p>
+                Leyfispakkann <strong>SmartEDocsPrm</strong> þarf að úthluta á alla notendur sem eiga að geta:
+            </p>
+            <ul>
+                <li>Skoðað uppsetningarsíðu Smart Central.</li>
+                <li>Skoðað annál og endurkeyrt mistakaðar færslur.</li>
+                <li>Tengt við Íslandsbanka.</li>
+            </ul>
+            <p>
+                Aðrir notendur – t.d. þeir sem aðeins færa færslur í dagbækur – mega <strong>ekki</strong> fá pakkann. Kerfið er hannað þannig að það truflar þá aldrei, jafnvel þótt þeir festi fylgiskjöl á skjöl.
+            </p>
+        </li>
+
+        <li>
+            <h4>Opna uppsetningarsíðuna</h4>
+            <p>
+                Leitaðu að <em>„SF E-Document Setup“</em> (eða smelltu á <em>Smart Central</em> aðalvalmyndina og þaðan í <em>Uppsetning</em>). Síðan opnast tóm í fyrsta sinn.
+            </p>
+            <figure class="screenshot">
+                <div class="placeholder">[ SKJÁSKOT: Uppsetningarsíða Smart Central – tóm ]</div>
+                <figcaption>Uppsetningarsíðan í fyrsta sinn</figcaption>
+            </figure>
+        </li>
+
+        <li>
+            <h4>Stilla Claude API-lykil</h4>
+            <p>
+                Þú þarft að fá Claude API-lykil hjá Metadata (við setjum upp aðgang fyrir hvern viðskiptavin) eða beint hjá Anthropic. Lykilinn límir þú í reitinn <em>„API Key“</em> á uppsetningarsíðunni. Þegar lykill er stilltur sýnir reiturinn fyrir neðan <strong>„Configured“</strong>.
+            </p>
+            <p>
+                Sjálfgefið líkan er <em>claude-sonnet-4-6</em>. Þú getur valið annað líkan ef þú þekkir framboð Anthropic – t.d. <em>claude-haiku-4-5</em> fyrir ódýrari og hraðari úrvinnslu.
+            </p>
+            <div class="callout">
+                <strong>Lykilinn er aldrei sýnilegur.</strong> Hann er geymdur dulritaður og getur ekki verið lesinn úr gagnagrunninum, heldur aðeins endurnýjaður.
+            </div>
+        </li>
+
+        <li>
+            <h4>Stilla sjálfgefna lánadrottna</h4>
+            <p>
+                Á sömu síðu, fyll inn:
+            </p>
+            <ul>
+                <li><strong>Sjálfgefinn reikningalánadrottinn</strong> – t.d. „ALMENN“ eða „ÝMSIR“. Þessi lánadrottinn grípur PDF reikninga þegar Claude finnur ekki kennitölu sem svarar til þekkts lánadrottnar.</li>
+                <li><strong>Sjálfgefinn kvittunalánadrottinn</strong> – oftast „KVITTANIR“ eða svipað. Notaður fyrir kvittanir.</li>
+            </ul>
+            <p>
+                Báðir lánadrottnarnir verða að vera þegar stofnaðir í Business Central. Mæli með að setja upp <strong>HB-reikningsnúmer</strong> á þá líka, svo kostnaðurinn fari beint á réttan stað.
+            </p>
+        </li>
+
+        <li>
+            <h4>Stilla móttakendur daglegs yfirlits</h4>
+            <p>
+                Í reitnum <em>„Notification Email Recipients“</em>, settu inn tölvupóstföng aðskilin með semikomu, t.d.:
+            </p>
+            <p><code>thor@metadata.is;katrin@viðskiptavinur.is</code></p>
+            <p>
+                Þeir sem hér eru tilgreindir munu fá daglegt yfirlit. Til að slökkva á tilkynningum, skildu reitinn eftir tóman.
+            </p>
+        </li>
+
+        <li>
+            <h4>Stilla tölvupóstreikning</h4>
+            <p>
+                Daglegt yfirlit notar sjálfgefinn tölvupóstreikning Business Central. Leitaðu að <em>„Email Accounts“</em> og passaðu að til sé reikningur sem er merktur fyrir <em>„Default“</em> sviðsmynd. Þetta þarf að vera <strong>M365</strong> eða <strong>SMTP</strong> reikningur – „Current User“ tegundin virkar ekki í verkröð.
+            </p>
+        </li>
+
+        <li>
+            <h4>Virkja sjálfvirka vinnslu</h4>
+            <p>
+                Á uppsetningarsíðunni er rofi <em>„Auto-Process Incoming Docs“</em>. Kveiktu á honum. Frá þeirri stundu fer hvert nýtt fylgiskjal sjálfkrafa í gegnum kerfið.
+            </p>
+        </li>
+
+        <li>
+            <h4>Setja upp verkröð fyrir daglegt yfirlit</h4>
+            <p>
+                Leitaðu að <em>„Job Queue Entries“</em>. Búðu til nýja færslu:
+            </p>
+            <ul>
+                <li><strong>Object Type to Run</strong>: Codeunit</li>
+                <li><strong>Object ID to Run</strong>: 57306 (Smart Central daglegt yfirlit)</li>
+                <li><strong>Recurring</strong>: Yes</li>
+                <li><strong>Starting Time</strong>: t.d. 17:00</li>
+                <li><strong>Run on Mondays / Tuesdays / Wednesdays / Thursdays / Fridays</strong>: Yes (eða allir dagar)</li>
+                <li><strong>Status</strong>: Ready</li>
+            </ul>
+            <figure class="screenshot">
+                <div class="placeholder">[ SKJÁSKOT: Job Queue Entry fyrir daglegt yfirlit ]</div>
+                <figcaption>Stilling á verkröð fyrir daglegan póst</figcaption>
+            </figure>
+        </li>
+
+        <li>
+            <h4>Setja upp verkröð fyrir Íslandsbanka (ef á við)</h4>
+            <p>
+                Önnur verkröðun sækir kreditkort, færslur og kvittanir frá Íslandsbanka:
+            </p>
+            <ul>
+                <li><strong>Object Type to Run</strong>: Codeunit</li>
+                <li><strong>Object ID to Run</strong>: 57307 (Íslandsbanka sjálfvirkt niðurhal)</li>
+                <li><strong>Recurring</strong>: Yes</li>
+                <li><strong>Starting Time</strong>: t.d. 06:00</li>
+                <li><strong>Status</strong>: Ready</li>
+            </ul>
+        </li>
+
+        <li>
+            <h4>Tengja við Íslandsbanka</h4>
+            <p>
+                Aðeins á við ef fyrirtækið notar Íslandsbanka kreditkort. Á uppsetningarsíðunni fylltu inn:
+            </p>
+            <ul>
+                <li><strong>ISB Bridge URL</strong> – fæst hjá Metadata.</li>
+                <li><strong>ISB API Base URL</strong> – fæst hjá Metadata.</li>
+                <li><strong>ISB Function Key</strong> – aðgangslykill, fæst hjá Metadata.</li>
+            </ul>
+            <p>
+                Smelltu síðan á aðgerðina <em>„Authorize Islandsbanki“</em>. Vafri opnast og biður þig að skrá þig inn í netbanka fyrirtækisins. Eftir samþykki, snýrðu aftur í Business Central og smellir á <em>„Test Connection“</em>. Ef allt er í lagi sýnir reiturinn <strong>„Connected“</strong>.
+            </p>
+            <div class="callout warn">
+                <strong>Mikilvægt.</strong> Samþykki Íslandsbanka rennur út reglulega. Kerfið endurnýjar það sjálfkrafa svo lengi sem aðgangsleyfið heldur. Ef sambandið slitnar (t.d. lykilorð breyttist), endurtaktu skrefið.
+            </div>
+        </li>
+
+        <li>
+            <h4>Stilla lánadrottnaspjald fyrir hvern lánadrottin sem skiptir máli</h4>
+            <p>
+                Opnaðu lánadrottnaspjaldið fyrir hvern lánadrottin sem á að nota Smart Central með, og stilltu:
+            </p>
+            <ul>
+                <li><strong>Sjálfgefið HB-reikningsnúmer</strong> – hvert kostnaðurinn fer.</li>
+                <li><strong>Ekki sameina línur</strong> – ef þú vilt sjá hverja XML-línu sér í lagi.</li>
+                <li><strong>Sjálfvirk samþykktarbeiðni</strong> – ef reikningurinn á að fara beint í samþykktarferlið.</li>
+                <li><strong>Samþykktarflokkur</strong> – ef sjálfvirk samþykktarbeiðni er virk.</li>
+            </ul>
+        </li>
+
+        <li>
+            <h4>Prufa með einu skjali</h4>
+            <p>
+                Til að staðfesta uppsetninguna:
+            </p>
+            <ul>
+                <li>Opnaðu nýtt móttekið skjal.</li>
+                <li>Festu PDF eða XML reikning við skjalið.</li>
+                <li>Bíddu í 5–10 sekúndur og opnaðu skjalið aftur.</li>
+                <li>Innkaupareikningur ætti að vera tengdur skjalinu.</li>
+                <li>Opnaðu <em>„Auto-Process Log“</em> og staðfestu að færslan birtist með stöðunni <strong>„Success“</strong>.</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>Eftir uppsetningu</h2>
+    <p>
+        Þegar fyrstu skjölin hafa farið í gegn, kynntu starfsfólki bókhaldsdeildarinnar:
+    </p>
+    <ul>
+        <li>Hvernig <a href="Workflow.html">verkflæðið</a> lítur út.</li>
+        <li>Hvar þeir sjá <a href="Features.html#log">annálinn</a> og hvernig á að endurkeyra.</li>
+        <li>Hvernig daglegi pósturinn lítur út og hver tekur við honum.</li>
+    </ul>
+
+    <div class="callout">
+        <strong>Þarftu aðstoð?</strong> Hafðu samband við Metadata. Við setjum upp aðganga, lyklun og tengingu við Íslandsbanka með þér.
+    </div>
+
+    <footer class="site-footer">
+        <div>Smart Central · Metadata ehf.</div>
+        <div>Drög · 13.05.2026</div>
+    </footer>
+
+</div>
+</body>
+</html>

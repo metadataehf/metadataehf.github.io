@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Central – Verkflæði</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+    <a class="brand" href="Index.html">Smart Central</a>
+    <nav>
+        <a href="Index.html">Forsíða</a>
+        <a href="Features.html">Eiginleikar</a>
+        <a href="GettingStarted.html">Uppsetning</a>
+        <a href="Workflow.html" aria-current="page">Verkflæði</a>
+        <a href="FAQ.html">Spurningar</a>
+    </nav>
+</header>
+
+<div class="page">
+
+    <header class="hero">
+        <div class="eyebrow">Verkflæði</div>
+        <h1>Dagur í lífi bókhaldsdeildarinnar</h1>
+        <p class="lede">
+            Hvernig vinnudagurinn lítur út með Smart Central – frá því að reikningur lendir á tölvupóstinum þangað til hann er bókaður og póstaður. Þrjár algengar leiðir: sjálfvirk leið, handvirk leið og kreditkort.
+        </p>
+    </header>
+
+    <h2>Algengasta leiðin – sjálfvirk vinnsla</h2>
+
+    <div class="flow">
+        <div class="stage">
+            <div class="label">1. Móttaka</div>
+            <div class="title">Skjal berst</div>
+            <div class="body">Reikningur kemur með tölvupósti eða dregst inn handvirkt sem fylgiskjal á móttekið skjal.</div>
+        </div>
+        <div class="stage">
+            <div class="label">2. Vinnsla</div>
+            <div class="title">Smart Central tekur við</div>
+            <div class="body">Innan við 5 sekúndum: XML þættaðan eða Claude les PDF. Lánadrottinn fundinn, innkaupareikningur stofnaður.</div>
+        </div>
+        <div class="stage">
+            <div class="label">3. Annáll</div>
+            <div class="title">Færsla skráð</div>
+            <div class="body">Niðurstaðan birtist í annál með stöðu <strong>Tókst</strong> (eða ástæðu þess sem mistókst).</div>
+        </div>
+        <div class="stage">
+            <div class="label">4. Samþykki</div>
+            <div class="title">Beiðni send (ef á við)</div>
+            <div class="body">Þegar lánadrottinn hefur „Sjálfvirk samþykktarbeiðni“ virkjað, fer reikningurinn beint í samþykktarferlið.</div>
+        </div>
+        <div class="stage">
+            <div class="label">5. Bókun</div>
+            <div class="title">Bókari póstar</div>
+            <div class="body">Eftir samþykki er reikningurinn póstaður á venjulegan hátt.</div>
+        </div>
+        <div class="stage">
+            <div class="label">6. Yfirlit</div>
+            <div class="title">Daglegur póstur</div>
+            <div class="body">Bókhaldsstjóri fær einn samanlagðan póst í lok dags með öllum vinnslum.</div>
+        </div>
+    </div>
+
+    <figure class="screenshot">
+        <div class="placeholder">[ SKJÁSKOT: Skjámynd af nýju mótteknu skjali sem var nýbúið að fara í gegn ]</div>
+        <figcaption>Móttekið skjal með innkaupareikningi tengdum</figcaption>
+    </figure>
+
+    <h2>Morgun – fyrsta verkefnið</h2>
+    <p>
+        Bókhaldsstjórinn opnar Business Central og smellir á <strong>Smart Central</strong> aðalvalmyndina. Þar sér hún á einum stað:
+    </p>
+    <ul>
+        <li>Hve mörg skjöl eru óafgreidd, flokkuð eftir tegund (Kvittanir, Reikningar, Rafrænir reikningar, …).</li>
+        <li>Hve margir innkaupareikningar bíða samþykkis.</li>
+        <li>Hve margir innkaupareikningar eru tilbúnir til bókunar.</li>
+        <li>Hve margir reikningar voru bókaðir í dag eða þessa viku.</li>
+    </ul>
+    <p>
+        Smellt á tölu – kerfið opnar listann síaðan á þann flokk.
+    </p>
+
+    <figure class="screenshot">
+        <div class="placeholder">[ SKJÁSKOT: Smart Central aðalvalmynd að morgni vinnudags ]</div>
+        <figcaption>Yfirlit yfir stöðu dagsins</figcaption>
+    </figure>
+
+    <h2>Reikningur frá þekktum birgi – sjálfvirka leiðin</h2>
+    <ol class="steps">
+        <li>
+            <h4>Reikningur berst</h4>
+            <p>Tölvupóstur kemur með PDF reikning. Bókari dregur PDF-skrána inn í nýtt móttekið skjal í Business Central. Engin önnur aðgerð.</p>
+        </li>
+        <li>
+            <h4>Vinnsla fer fram</h4>
+            <p>Innan við 5 sekúndum: Claude les PDF, finnur kennitölu birgis, dagsetningar og fjárhæðir. Smart Central stofnar innkaupareikning, sameinar línur (eða ekki) eftir stillingu lánadrottnar.</p>
+        </li>
+        <li>
+            <h4>Samþykktarbeiðni send</h4>
+            <p>Birgirinn hefur „Sjálfvirk samþykktarbeiðni“ virka. Reikningurinn fer beint í samþykktarferlið – samþykkjandinn fær Business Central tilkynningu.</p>
+        </li>
+        <li>
+            <h4>Samþykkjandi samþykkir</h4>
+            <p>Á einhverjum tímapunkti dagsins kíkir samþykkjandinn á reikninginn, ber hann saman við PDF fylgiskjalið og smellir <em>„Approve“</em>.</p>
+        </li>
+        <li>
+            <h4>Bókari póstar</h4>
+            <p>Bókhaldsstjórinn sér samþykkta reikninga í <em>„Tilbúnir til bókunar“</em> dálkinum á Smart Central. Hún skoðar þá, bókar í einu lagi (Post).</p>
+        </li>
+        <li>
+            <h4>Annállinn sýnir</h4>
+            <p>Allir reikningar dagsins birtast í annál með stöðunni <strong>Tókst</strong>. Daglegi pósturinn um kvöldið staðfestir.</p>
+        </li>
+    </ol>
+
+    <h2>Kvittun frá Íslandsbanka korti</h2>
+
+    <ol class="steps">
+        <li>
+            <h4>Kvittun skanngerð í app bankans</h4>
+            <p>Starfsmaður tekur upp kvittun fyrir kortafærslu og myndar hana í app Íslandsbanka.</p>
+        </li>
+        <li>
+            <h4>Sjálfvirkt niðurhal</h4>
+            <p>Næsta morgun keyrir verkröðin sem sækir kortafærslur og kvittanir frá Íslandsbanka. Ný kvittun verður að mótteknu skjali með fylgiskjali.</p>
+        </li>
+        <li>
+            <h4>Vinnsla – staðbundin eða Claude</h4>
+            <p>Ef kortið er tengt lánadrottni (t.d. „Olís kort“ → lánadrottinn Olís), er innkaupareikningurinn smíðaður beint úr bankafærslunni. Vörpun MCC-flokks ræður HB-reikningi. Ef kortið er ekki tengt, sendir kerfið kvittunina á Claude.</p>
+        </li>
+        <li>
+            <h4>Bókari skoðar</h4>
+            <p>Bókari sér kvittunina meðal kvittana dagsins. Ef MCC-flokkur var nýr, gæti hún viljað bæta vörpun við svo næsta sambærilega kvittun bóka rétt sjálfkrafa.</p>
+        </li>
+        <li>
+            <h4>Bókun</h4>
+            <p>Bókari pósta kvittunina eins og venjulegan reikning – eða safnar þeim saman í lokin og pósta margar í einu.</p>
+        </li>
+    </ol>
+
+    <figure class="screenshot">
+        <div class="placeholder">[ SKJÁSKOT: Listi yfir Íslandsbanka kvittanir með stöðum ]</div>
+        <figcaption>Kvittanir frá Íslandsbanka – sjálfvirkt niðurhal</figcaption>
+    </figure>
+
+    <h2>Rafrænn reikningur – XML</h2>
+    <ol class="steps">
+        <li>
+            <h4>UBL XML berst</h4>
+            <p>Birgir sendir reikning sem UBL XML – t.d. í gegnum InExchange, Unimaze eða annað rafrænt skjalakerfi.</p>
+        </li>
+        <li>
+            <h4>Vinnsla</h4>
+            <p>XML er þættaðan staðbundið. Kennitala lest beint úr <code>cac:AccountingSupplierParty</code>. Engin gögn fara út úr kerfinu.</p>
+        </li>
+        <li>
+            <h4>Lánadrottnaleit</h4>
+            <p>
+                Þrjár mögulegar niðurstöður:
+            </p>
+            <ul>
+                <li><strong>Lánadrottinn fannst</strong> – innkaupareikningur stofnaður. Staða „Tókst“.</li>
+                <li><strong>Lánadrottinn fannst ekki</strong> – skjalið er sleppt, staða „Lánadrottinn fannst ekki“. Bókari sér þetta í daglegum pósti og getur stofnað lánadrottin og endurkeyrt.</li>
+                <li><strong>Kennitala svarar til eigin fyrirtækis</strong> – kerfið hunsar hana, leitar í PDF fylgiskjali sem barst með XML, eða fellur á sjálfgefinn reikningalánadrottin.</li>
+            </ul>
+        </li>
+        <li>
+            <h4>EINDAGI yfirskrift</h4>
+            <p>Ef XML inniheldur EINDAGI athugasemd, er sá gjalddagi notaður. Bókari þarf ekki að breyta gjalddaga handvirkt.</p>
+        </li>
+        <li>
+            <h4>Restin eins og við PDF</h4>
+            <p>Samþykktarferli, bókun og annáll – sömu leið og fyrir PDF reikninga.</p>
+        </li>
+    </ol>
+
+    <h2>Þegar eitthvað fer úrskeiðis</h2>
+
+    <h3>Endurkeyrsla</h3>
+    <p>
+        Á skjalskorti móttekins skjals er aðgerð <em>„Endurkeyra“</em>. Algengar ástæður:
+    </p>
+    <ul>
+        <li>Lánadrottinn vantaði í kerfið. Bókari stofnar hann og endurkeyrir – og núna finnur kerfið hann.</li>
+        <li>Claude var tímabundið ekki tiltækur (network villa). Endurkeyrsla virkar oftast strax.</li>
+        <li>Samþykktarferli var ekki rétt sett upp. Eftir lagfæringu, endurkeyrir bókari.</li>
+    </ul>
+
+    <h3>Að lesa annál</h3>
+    <p>
+        Annálið (<em>„Auto-Process Log“</em>) sýnir hverja tilraun með:
+    </p>
+    <ul>
+        <li><strong>Tími</strong> – nákvæm dagsetning og klukkustund.</li>
+        <li><strong>Staða</strong> – litkóðuð: grænn (Tókst), gulur (Þegar tengt / Ekki gjaldgengt / Lánadrottinn fannst ekki), rauður (Mistókst).</li>
+        <li><strong>Skjalanúmer</strong> – tengill á innkaupareikninginn ef hann var stofnaður.</li>
+        <li><strong>Villuboð</strong> – skiljanleg lýsing á því sem fór úrskeiðis, þegar á við.</li>
+        <li><strong>Lengd</strong> – hversu lengi vinnslan tók (gagnlegt þegar Claude er hægur).</li>
+    </ul>
+
+    <figure class="screenshot">
+        <div class="placeholder">[ SKJÁSKOT: Annállinn með bæði grænum og rauðum færslum ]</div>
+        <figcaption>Annállinn með stöðu hvers atvika</figcaption>
+    </figure>
+
+    <h3>Daglegi pósturinn</h3>
+    <p>
+        Í lok dags fær bókhaldsstjórinn samanteknlegan póst:
+    </p>
+    <ul>
+        <li><strong>Tókst</strong> – tafla yfir reikninga sem fóru í gegn, með birgi, fjárhæð og skjalanúmeri.</li>
+        <li><strong>Þarf athugun</strong> – tafla yfir það sem mistókst eða fann ekki lánadrottin, með ástæðu á íslensku.</li>
+    </ul>
+    <p>
+        Hún getur þá kíkt yfir og endurkeyrt þá sem þarf, og veitt samþykkjendum áminningu ef beiðnir bíða óafgreiddar.
+    </p>
+
+    <h2>Bestu venjur</h2>
+    <ul>
+        <li><strong>Stofnaðu birgi áður en reikningar berast.</strong> Þegar nýr birgir er nefndur í tilboði eða samningi, stofnaðu hann strax með kennitölu – þá kemur fyrsti reikningur sjálfkrafa í gegn.</li>
+        <li><strong>Tengdu kreditkort við lánadrottna.</strong> Olís kortið → Olís lánadrottinn, Costco kortið → Costco lánadrottinn. Þá sparar þú Claude köll og fyrirtækið greiðir minna fyrir gervigreind.</li>
+        <li><strong>Settu upp MCC vörpun smám saman.</strong> Þegar nýr MCC birtist (t.d. 5812 – veitingar), vörpaðu á viðeigandi HB-reikning. Næsta veitingakvittun bókar sjálfkrafa rétt.</li>
+        <li><strong>Lestu daglegan póst.</strong> Hann er hannaður sem 30 sekúndna lestur – nógu nákvæmur til að finna villur, nógu stuttur til að vera ekki hunsaður.</li>
+    </ul>
+
+    <footer class="site-footer">
+        <div>Smart Central · Metadata ehf.</div>
+        <div>Drög · 13.05.2026</div>
+    </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Central – Spurningar og svör</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+    <a class="brand" href="Index.html">Smart Central</a>
+    <nav>
+        <a href="Index.html">Forsíða</a>
+        <a href="Features.html">Eiginleikar</a>
+        <a href="GettingStarted.html">Uppsetning</a>
+        <a href="Workflow.html">Verkflæði</a>
+        <a href="FAQ.html" aria-current="page">Spurningar</a>
+    </nav>
+</header>
+
+<div class="page">
+
+    <header class="hero">
+        <div class="eyebrow">Spurningar og svör</div>
+        <h1>Algeng vandamál og hvernig á að leysa þau</h1>
+        <p class="lede">
+            Hér eru spurningar sem koma upp í daglegum rekstri Smart Central – flokkað eftir efni. Ef svarið er ekki hér, kíktu í annálinn fyrst og síðan í tæknilegan stuðning hjá Metadata.
+        </p>
+    </header>
+
+    <h2>Sjálfvirk vinnsla</h2>
+
+    <section class="faq-item">
+        <h3>Sjálfvirk vinnsla fer ekki af stað – hvað þarf að athuga?</h3>
+        <p>Athugaðu eftirfarandi í þessari röð:</p>
+        <ol>
+            <li>Er rofinn <em>„Auto-Process Incoming Docs“</em> kveiktur á uppsetningarsíðu?</li>
+            <li>Er fylgiskjalið með studdri skráartegund (xml, pdf, jpg, png, gif, webp)?</li>
+            <li>Hefur notandinn sem festi fylgiskjalið leyfispakka <em>SmartEDocsPrm</em>? Án hans truflar kerfið hann ekki – og engin sjálfvirk vinnsla fer fram.</li>
+            <li>Er Task Scheduler virkur í Business Central (sjálfgefið í skýjaútgáfu, þarf að virkja í innanhúss-uppsetningu)?</li>
+            <li>Athugaðu annál – var færsla skráð með stöðu „Ekki gjaldgengt“ eða „Mistókst“?</li>
+        </ol>
+    </section>
+
+    <section class="faq-item">
+        <h3>XML reikningur fór ekki í gegn – staða „Lánadrottinn fannst ekki“</h3>
+        <p>
+            Kerfið fann ekki lánadrottin sem svarar til kennitölunnar í XML-reikningnum. Ein af þessum ástæðum:
+        </p>
+        <ul>
+            <li>Lánadrottinn er ekki stofnaður í Business Central. Stofnaðu hann með réttu kennitölunni í reitnum <em>„Skráningarnúmer“</em>, og endurkeyrðu skjalið.</li>
+            <li>Lánadrottinn er stofnaður en kennitalan er ekki skráð. Bættu henni við.</li>
+            <li>Kennitalan í XML inniheldur band eða bil sem trufla samanburðinn (sjaldgæft – kerfið hreinsar þetta venjulega).</li>
+        </ul>
+        <p>
+            Eftir lagfæringu, smelltu á <em>„Endurkeyra“</em> á skjalkortinu.
+        </p>
+    </section>
+
+    <section class="faq-item">
+        <h3>Claude svaraði með „rangri“ kennitölu – kennitala kaupanda í staðinn fyrir birgis</h3>
+        <p>
+            Þetta gerist stundum á kvittunum þar sem báðar kennitölurnar standa á skjalinu. Smart Central varar gegn þessu sérstaklega: ef Claude skilar kennitölu sem svarar til eigin fyrirtækis (þíns), er hún hunsuð og kerfið fellur á sjálfgefinn kvittunalánadrottin.
+        </p>
+        <p>
+            Ef þetta gerist samt, getur þú handvirkt breytt lánadrottni á innkaupareikningnum áður en hann er bókaður.
+        </p>
+    </section>
+
+    <section class="faq-item">
+        <h3>Hvers vegna birtist sama skjalið ekki í annál þegar ég festi nýtt fylgiskjal?</h3>
+        <p>
+            Ef móttekið skjal er <em>þegar tengt</em> innkaupareikningi (þ.e. það hefur áður farið í gegnum vinnslu), sleppir kerfið vinnslunni hljóðlátt – engin færsla skráð. Þetta er meðvitað til að halda annálnum hreinum.
+        </p>
+        <p>
+            Ef þú vilt endurkeyra, smelltu á <em>„Endurkeyra“</em> – aðgerðin afhjúpar undanfara fyrri tilraunarinnar.
+        </p>
+    </section>
+
+    <h2>Daglegt yfirlit</h2>
+
+    <section class="faq-item">
+        <h3>Ég fékk ekki daglegan póst í gær</h3>
+        <p>Mögulegar ástæður:</p>
+        <ul>
+            <li>Verkröðin (Job Queue Entry fyrir codeunit 57306) er ekki <em>„Ready“</em> eða hefur stöðvast með villu. Opnaðu <em>„Job Queue Entries“</em> og kíktu á stöðuna.</li>
+            <li>Engar nýjar færslur voru til að tilkynna um – kerfið sendir engan póst þegar ekkert hefur breyst.</li>
+            <li>Tölvupóstreikningur er ekki rétt stilltur. Athugaðu <em>„Email Accounts“</em> – sjálfgefinn reikningur þarf að vera til staðar og virkur.</li>
+            <li>Reiturinn <em>„Notification Email Recipients“</em> er tómur á uppsetningarsíðu.</li>
+        </ul>
+    </section>
+
+    <section class="faq-item">
+        <h3>Ég vil prufa daglegan póst núna, þarf ég að bíða til kvölds?</h3>
+        <p>
+            Nei. Á uppsetningarsíðunni er aðgerðin <em>„Send Notification Email Now“</em>. Hún sendir póst með öllum ótilkynntum færslum strax.
+        </p>
+    </section>
+
+    <section class="faq-item">
+        <h3>Hvers vegna eru sumir reikningar með stöðu „Mistókst“ í daglegum pósti, þótt innkaupareikningurinn sé tilbúinn?</h3>
+        <p>
+            Sjálfvirka samþykktarbeiðnin mistókst (t.d. samþykkjandakeðjan ekki sett upp). Innkaupareikningurinn er stofnaður og notandi getur sent hann handvirkt í samþykktarferlið. Status „Mistókst“ vekur athygli á því að mannlegt inngrip þarf.
+        </p>
+    </section>
+
+    <h2>Íslandsbanki</h2>
+
+    <section class="faq-item">
+        <h3>Íslandsbanka tenging slitnaði – „Not connected“</h3>
+        <p>Mögulegar ástæður:</p>
+        <ul>
+            <li>Aðgangsleyfi rann út og var ekki endurnýjað í tíma. Smelltu á <em>„Authorize Islandsbanki“</em> og endurtaktu auðkenningu.</li>
+            <li>Lykilorð netbankans breyttist – sama lausn.</li>
+            <li>ISB Function Key vantar eða er rangur. Hafðu samband við Metadata.</li>
+            <li>Brú Íslandsbanka er ekki tiltæk – sjaldgæft, en getur gerst í viðhaldi. Reyndu aftur eftir nokkrar mínútur.</li>
+        </ul>
+    </section>
+
+    <section class="faq-item">
+        <h3>Kort eða færslur birtast ekki sjálfkrafa</h3>
+        <p>
+            Verkröðin sem sækir Íslandsbanka gögn (codeunit 57307) þarf að vera virk. Opnaðu <em>„Job Queue Entries“</em> og athugaðu hvort hún sé <em>„Ready“</em> og hafi keyrt nýlega.
+        </p>
+        <p>
+            Þú getur líka opnað kortalistann og smellt á <em>„Refresh from Íslandsbanki“</em> til að sækja handvirkt.
+        </p>
+    </section>
+
+    <section class="faq-item">
+        <h3>Kortakvittun fór á rangt HB-reikningsnúmer</h3>
+        <p>Tvær mögulegar ástæður:</p>
+        <ul>
+            <li><strong>MCC vörpun vantar.</strong> Kerfið féll á sjálfgefið HB-reikningsnúmer lánadrottnar. Opnaðu <em>„MCC Mappings“</em> og bættu við vörpun fyrir þennan flokk. Næsta kvittun mun bóka rétt.</li>
+            <li><strong>Kortið er ekki tengt lánadrottni.</strong> Kvittunin fór Claude-leiðina og Claude valdi sjálfgefinn kvittunalánadrottin. Á kortinu, settu <em>„Tengdur lánadrottinn“</em> og endurkeyrðu.</li>
+        </ul>
+    </section>
+
+    <section class="faq-item">
+        <h3>Gömul kvittun (eldri en mánaðargömul) fer ekki rétt í gegn</h3>
+        <p>
+            Sjálfvirka niðurhalið sækir aðeins færslur frá núverandi mánuði og fyrri mánuði. Þegar þú flytur inn gamla kvittun, sækir kerfið færslur þess mánaðar sjálfkrafa á eftir – en á aðeins við um mánuðinn sem kvittunin er frá. Ef færslan er á mánaðamótum og lendir í næsta mánaðaruppgjöri bankans, gæti hún ekki fundist í þeirri ferð.
+        </p>
+        <p>
+            Lausnin er handvirk endurkeyrsla eftir að uppgjör mánaðarins er komið inn – eða að færa kvittunina á réttan stað handvirkt.
+        </p>
+    </section>
+
+    <h2>Samþykktarferli</h2>
+
+    <section class="faq-item">
+        <h3>Samþykktarbeiðni var ekki send – „samþykktarferli ekki uppsett“</h3>
+        <p>Tvennt þarf að vera til staðar:</p>
+        <ul>
+            <li><strong>Workflow</strong> – innkaupareikninga-vinnslukerfi þarf að vera virkjað. Leitaðu að <em>„Workflows“</em> og staðfestu að <em>„Purchase Invoice Approval Workflow“</em> (eða samsvarandi) sé <em>„Enabled“</em>.</li>
+            <li><strong>Approval User Setup</strong> – samþykkjandakeðjan þarf að vera sett upp fyrir hvern innkaupsfulltrúa sem samþykktarflokkar lánadrottna vísa á.</li>
+        </ul>
+    </section>
+
+    <section class="faq-item">
+        <h3>Lánadrottinn er stilltur á sjálfvirka samþykktarbeiðni en hún var ekki send</h3>
+        <p>
+            Athugaðu annálinn. Smart Central skrifar nákvæma villulýsingu – t.d. „Samþykkjandakeðja ekki sett upp fyrir Purchaser Code KATR“. Þá veistu nákvæmlega hvar á að líta.
+        </p>
+    </section>
+
+    <section class="faq-item">
+        <h3>Get ég látið Smart Central senda samþykktarbeiðni eftir á?</h3>
+        <p>
+            Ekki sjálfvirkt í þessari útgáfu. Endurkeyrslan sleppir samþykktarbeiðninni þegar innkaupareikningurinn er nú þegar til. Þú getur sent hann handvirkt í samþykktarferlið með hnappnum <em>„Send Approval Request“</em> á reikningnum sjálfum.
+        </p>
+    </section>
+
+    <h2>Almennt</h2>
+
+    <section class="faq-item">
+        <h3>Hvar sé ég hvaða Claude-líkan er notað?</h3>
+        <p>
+            Á uppsetningarsíðunni, í reitnum <em>„Model Name“</em>. Sjálfgefið er <em>claude-sonnet-4-6</em>. Þú getur breytt þessu hvenær sem er – breyting tekur strax gildi.
+        </p>
+    </section>
+
+    <section class="faq-item">
+        <h3>Hvað kostar hver Claude vinnsla?</h3>
+        <p>
+            Verðlag er ákveðið af Anthropic. Hver venjuleg PDF kvittun kostar að jafnaði nokkrar krónur. Stærri PDF reikningar (margar síður) kosta meira. UBL XML þættun kostar ekkert – hún er gerð staðbundið. Kortakvittanir frá tengdum kortum kosta líka ekkert (engin Claude köll).
+        </p>
+    </section>
+
+    <section class="faq-item">
+        <h3>Get ég slökkt á sjálfvirku vinnslu tímabundið?</h3>
+        <p>
+            Já. Slökktu á <em>„Auto-Process Incoming Docs“</em> rofanum á uppsetningarsíðu. Handvirka aðgerðin <em>„Búa til Smart skjal“</em> á skjalskorti er enn í boði.
+        </p>
+    </section>
+
+    <section class="faq-item">
+        <h3>Get ég eytt færslum úr annálnum?</h3>
+        <p>
+            Já. Á annálssíðu er aðgerðin <em>„Clear Log“</em>. Hún eyðir öllum færslum og setur teljarann aftur á 1. Engin sjálfvirk grisjun er innbyggð í þessari útgáfu – annállinn vex þangað til hann er hreinsaður handvirkt.
+        </p>
+    </section>
+
+    <section class="faq-item">
+        <h3>Geta tvö Business Central fyrirtæki deilt Íslandsbanka tengingu?</h3>
+        <p>
+            Nei. Hvert fyrirtæki hefur sína eigin tengingu, sitt eigið aðgangsleyfi og sína eigin geymslu. Þetta er meðvituð hönnunarstefna til að halda gögnum fyrirtækjanna aðskildum.
+        </p>
+    </section>
+
+    <div class="callout">
+        <strong>Vantar þig svar?</strong> Hafðu samband við Metadata á <a href="mailto:thor@metadata.is">thor@metadata.is</a>. Því nákvæmari sem lýsingin er (annálsfærsla, skjámynd, dagsetning), því hraðari svör.
+    </div>
+
+    <footer class="site-footer">
+        <div>Smart Central · Metadata ehf.</div>
+        <div>Drög · 13.05.2026</div>
+    </footer>
+
+</div>
+</body>
+</html>

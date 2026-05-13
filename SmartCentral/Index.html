@@ -2,185 +2,23 @@
 <html lang="is">
 <head>
     <meta charset="UTF-8">
-    <title>Smart Central – Yfirlit eiginleika</title>
-    <style>
-        :root {
-            --primary: #1F3A6B;
-            --accent: #2E7D32;
-            --muted: #555555;
-            --bg-soft: #EAF2FB;
-            --border: #D6DEE8;
-        }
-
-        * { box-sizing: border-box; }
-
-        body {
-            font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-            color: #1f1f1f;
-            background: #ffffff;
-            margin: 0;
-            line-height: 1.55;
-            font-size: 16px;
-        }
-
-        .page {
-            max-width: 980px;
-            margin: 0 auto;
-            padding: 48px 56px 64px;
-        }
-
-        header.hero {
-            border-bottom: 4px solid var(--primary);
-            padding-bottom: 24px;
-            margin-bottom: 32px;
-        }
-
-        header.hero .eyebrow {
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            font-size: 0.78rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        h1 {
-            color: var(--primary);
-            font-size: 2.2rem;
-            margin: 0 0 12px;
-            line-height: 1.2;
-        }
-
-        header.hero .lede {
-            color: var(--muted);
-            font-size: 1.05rem;
-            max-width: 720px;
-            margin: 0;
-        }
-
-        h2 {
-            color: var(--primary);
-            font-size: 1.45rem;
-            margin: 40px 0 16px;
-            border-left: 4px solid var(--accent);
-            padding-left: 12px;
-        }
-
-        h3 {
-            color: var(--primary);
-            font-size: 1.1rem;
-            margin: 0 0 6px;
-        }
-
-        p { margin: 0 0 12px; }
-
-        ul { margin: 0 0 12px; padding-left: 22px; }
-        ul li { margin-bottom: 6px; }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-            gap: 18px;
-            margin-top: 8px;
-        }
-
-        .feature {
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 20px 22px;
-            background: #fff;
-            transition: box-shadow 0.15s ease;
-        }
-
-        .feature:hover {
-            box-shadow: 0 6px 18px rgba(31, 58, 107, 0.08);
-        }
-
-        .feature .icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: var(--bg-soft);
-            color: var(--primary);
-            font-weight: 700;
-            font-size: 1rem;
-            margin-bottom: 12px;
-        }
-
-        .feature p {
-            color: #333;
-            font-size: 0.95rem;
-            margin: 0;
-        }
-
-        .callout {
-            background: var(--bg-soft);
-            border-left: 4px solid var(--primary);
-            padding: 16px 20px;
-            border-radius: 4px;
-            margin: 18px 0;
-            font-size: 0.95rem;
-        }
-
-        .callout strong { color: var(--primary); }
-
-        table.specs {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 8px;
-            font-size: 0.95rem;
-        }
-        table.specs th, table.specs td {
-            text-align: left;
-            padding: 10px 14px;
-            border-bottom: 1px solid var(--border);
-            vertical-align: top;
-        }
-        table.specs th {
-            background: var(--bg-soft);
-            color: var(--primary);
-            font-weight: 600;
-            width: 32%;
-        }
-
-        .pillrow {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 4px 0 16px;
-        }
-        .pill {
-            display: inline-block;
-            padding: 4px 12px;
-            background: var(--bg-soft);
-            color: var(--primary);
-            border-radius: 999px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        footer {
-            margin-top: 56px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
-            color: var(--muted);
-            font-size: 0.85rem;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        @media print {
-            .page { padding: 24px; }
-            .feature:hover { box-shadow: none; }
-        }
-    </style>
+    <title>Smart Central – Sjálfvirk vinnsla skjala fyrir Business Central</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+<header class="site-header">
+    <a class="brand" href="Index.html">Smart Central</a>
+    <nav>
+        <a href="Index.html" aria-current="page">Forsíða</a>
+        <a href="Features.html">Eiginleikar</a>
+        <a href="GettingStarted.html">Uppsetning</a>
+        <a href="Workflow.html">Verkflæði</a>
+        <a href="FAQ.html">Spurningar</a>
+    </nav>
+</header>
+
 <div class="page">
 
     <header class="hero">
@@ -189,7 +27,20 @@
         <p class="lede">
             Sjálfvirk vinnsla á rafrænum reikningum, PDF-skjölum og kortakvittunum – beint inn í Business Central. Skjöl flokkast sjálfkrafa, lánadrottnar finnast af kennitölu, innkaupareikningur verður til og daglegt yfirlit berst í tölvupósti.
         </p>
+        <div class="cta-row">
+            <a class="cta" href="GettingStarted.html">Byrja á uppsetningu</a>
+            <a class="cta secondary" href="Features.html">Skoða eiginleika</a>
+        </div>
     </header>
+
+    <h2>Af hverju Smart Central?</h2>
+    <p>
+        Bókhaldsdeildin eyðir miklum tíma í að taka á móti, lesa og skrá hverja kvittun og hvern reikning sem berst. Smart Central tekur þessa rútínu yfir: um leið og fylgiskjal er fest við skjal í Business Central er það sjálfkrafa þætt eða lesið með gervigreind, lánadrottinn fundinn og innkaupareikningur stofnaður. Bókari sér aðeins niðurstöðuna – og fær daglegt yfirlit.
+    </p>
+
+    <div class="callout">
+        <strong>Hannað fyrir íslenskar aðstæður.</strong> Beinar samþættingar við Íslandsbanka Arion og Landsbankann, kennitölumiðuð lánadrottnaleit, stuðningur við EINDAGI yfirskrift í XML-reikningum og íslenskt notendaviðmót.
+    </div>
 
     <h2>Helstu eiginleikar</h2>
     <div class="features">
@@ -197,134 +48,129 @@
         <div class="feature">
             <div class="icon">1</div>
             <h3>Sjálfvirk vinnsla skjala</h3>
-            <p>Hvert nýtt fylgiskjal sem fest er á móttekið skjal fer sjálfkrafa í gegnum kerfið – XML-reikningar lesnir staðbundið, PDF og myndir sendar á Claude gervigreind. Notandi þarf hvergi að ýta á hnapp.</p>
+            <p>Hvert nýtt fylgiskjal sem fest er á móttekið skjal fer sjálfkrafa í gegnum kerfið. Notandi þarf hvergi að ýta á hnapp.</p>
+            <a class="more" href="Features.html#auto-processing">Lesa meira →</a>
         </div>
 
         <div class="feature">
             <div class="icon">2</div>
             <h3>Rafrænir reikningar (UBL 2.0)</h3>
-            <p>Þættari les XML-reikninga, dregur fram lánadrottin af kennitölu, býr til innkaupareikning með línum, gjalddaga (EINDAGI yfirskrift studd) og gjaldmiðli.</p>
+            <p>XML-reikningar þættaðir staðbundið. Lánadrottinn fundinn af kennitölu, gjalddagi (þar með talin EINDAGI yfirskrift) og gjaldmiðill skráð.</p>
+            <a class="more" href="Features.html#ubl">Lesa meira →</a>
         </div>
 
         <div class="feature">
             <div class="icon">3</div>
             <h3>Gervigreind fyrir PDF og myndir</h3>
-            <p>PDF og JPG/PNG skjöl eru send á Claude sem dregur út lánadrottin, fjárhæðir, dagsetningar og lýsingar. Sjálfgefnir lánadrottnar fyrir reikninga og kvittanir grípa þegar gervigreind finnur ekki rétta kennitölu.</p>
+            <p>PDF, JPG og PNG send á Claude gervigreind sem dregur fram lánadrottin, fjárhæðir, dagsetningar og lýsingu.</p>
+            <a class="more" href="Features.html#ai">Lesa meira →</a>
         </div>
 
         <div class="feature">
             <div class="icon">4</div>
-            <h3>Smart Central – aðalvalmynd</h3>
-            <p>Þrír dálkar með rauntölum: uppsetning, virkar færslur (eftir flokki) og afgreidd skjöl. Smellt á flokk – beint á rétta listann. Aðgerðaslá skipt í þrjá flokka: Uppsetning, Kreditkort og Sjálfvirkni.</p>
+            <h3>Smart Central aðalvalmynd</h3>
+            <p>Þrír dálkar með rauntölum: uppsetning, virkar færslur eftir flokki og afgreidd skjöl. Smellt á flokk – beint á rétta listann.</p>
+            <a class="more" href="Features.html#smart-central">Lesa meira →</a>
         </div>
 
         <div class="feature">
             <div class="icon">5</div>
-            <h3>Skjalaflokkar</h3>
-            <p>Hverri færslu er gefinn flokkur: <strong>Kvittanir</strong>, <strong>Greiðslukort</strong>, <strong>Reikningar</strong>, <strong>Rafrænir reikningar</strong> eða <strong>Óflokkað</strong>. Talningar í valmynd uppfærast samstundis.</p>
+            <h3>Samþætting við banka</h3>
+            <p>Sækir kreditkort, færslur og kvittanir sjálfkrafa. Sér uppsetning fyrir hvern banka og hvert fyrirtæki, leyniorð í lyklageymslu.</p>
+            <a class="more" href="Features.html#isb">Lesa meira →</a>
         </div>
 
         <div class="feature">
             <div class="icon">6</div>
-            <h3>Íslandsbanka samþætting</h3>
-            <p>Bein tenging við Íslandsbanka í gegnum sérstaka brú. Sækir kreditkort, færslur og kvittanir sjálfkrafa – með öruggu auðkenningarflæði og leyniorðum geymdum í lyklageymslu, sér fyrir hvert fyrirtæki.</p>
+            <h3>Vörpun á bókhaldsreikning</h3>
+            <p>Kortafærslur mynda innkaupareikninga byggða á flokkun bankanna (MCC - Merchant Category Codes). Sjálfgefið reikningsnúmer á lánadrottni grípur þegar engin vörpun er til.</p>
+            <a class="more" href="Features.html#gl-mapping">Lesa meira →</a>
         </div>
 
         <div class="feature">
             <div class="icon">7</div>
-            <h3>Vörpun á bókhaldsreikning eftir kaupmannaflokki</h3>
-            <p>Kortafærslur fá bókhaldsreikning byggðan á flokki kaupmanns (MCC). Sjálfvirk söfnun á flokkum sem birtast, með handvirkri vörpun á HB-reikning.</p>
+            <h3>Sjálfvirk samþykktarbeiðni</h3>
+            <p>Hver lánadrottinn getur valið sjálfvirka sendingu í samþykktarferli. Innkaupareikningurinn fer beint áfram til samþykkis.</p>
+            <a class="more" href="Features.html#approval">Lesa meira →</a>
         </div>
 
         <div class="feature">
             <div class="icon">8</div>
-            <h3>Staðbundin smíði fyrir kortakvittanir</h3>
-            <p>Þegar kreditkort er tengt lánadrottni er kvittun smíðuð beint úr bankafærslunni – gervigreind er sleppt. Vörpunin á bókhaldsreikning eftir flokki kaupmanns nýtist; annars gildir sjálfgefinn HB-reikningur lánadrottnar.</p>
+            <h3>Daglegt yfirlit í tölvupósti</h3>
+            <p>Bókhaldsstjórinn fær einn samanlagðan tölvupóst á dag: hvað tókst, hvað þarf athugun, með ástæðum.</p>
+            <a class="more" href="Features.html#notification">Lesa meira →</a>
         </div>
 
         <div class="feature">
             <div class="icon">9</div>
-            <h3>Sjálfvirk samþykktarbeiðni</h3>
-            <p>Hver lánadrottinn getur valið sjálfvirka sendingu í samþykktarferli. Þá er innkaupareikningurinn sendur sjálfkrafa í samþykktarferlið strax eftir að hann verður til, með réttum innkaupsfulltrúa.</p>
-        </div>
-
-        <div class="feature">
-            <div class="icon">10</div>
-            <h3>Daglegt yfirlit í tölvupósti</h3>
-            <p>Yfirlit fer á ákveðna viðtakendur einu sinni á dag: hvað tókst, hvað mistókst, með ástæðum. Knýtt af verkröð, drifið af bókhaldsdeild án inngrips notanda.</p>
-        </div>
-
-        <div class="feature">
-            <div class="icon">11</div>
             <h3>Annáll yfir sjálfvirka vinnslu</h3>
-            <p>Hver tilraun til vinnslu er skráð: tími, staða (Tókst, Lánadrottinn fannst ekki, Þegar tengt, Ekki gjaldgengt, Mistókst), villuboð og lengd. „Endurkeyra“ aðgerð er á skjalskorti.</p>
-        </div>
-
-        <div class="feature">
-            <div class="icon">12</div>
-            <h3>Lánadrottnauppsetning</h3>
-            <p>Sjálfgefinn HB-reikningur, valmöguleiki um sameiningu lína og sjálfvirkur samþykktarflokkur – allt á lánadrottnaskránni. Engin þörf á sérstöku spjaldi.</p>
+            <p>Hver tilraun er skráð með stöðu, villuboðum og lengd. „Endurkeyra“ aðgerð á skjalskorti þegar þörf er á.</p>
+            <a class="more" href="Features.html#log">Lesa meira →</a>
         </div>
 
     </div>
 
-    <h2>Tæknilegt yfirlit</h2>
+    <h2>Hver er ávinningurinn?</h2>
+    <ul>
+        <li><strong>Sparar tíma.</strong> Bókari þarf ekki að slá inn dagsetningar, fjárhæðir eða lánadrottin upp á nýtt.</li>
+        <li><strong>Fækkar mistökum.</strong> Kennitala lánadrottnar er lesin beint úr skjali, ekki valin handvirkt.</li>
+        <li><strong>Færir kortakaup beint á bókhald.</strong> Kvittanir frá Íslandsbanka samtengjast við réttar kortafærslur og rétta bókhaldsreikninga.</li>
+        <li><strong>Tryggir yfirsýn.</strong> Daglegt yfirlit og annáll sýna hverja einustu vinnslu – ekkert hverfur þegjandi.</li>
+        <li><strong>Aðlagast vinnuferlum.</strong> Sjálfvirk samþykktarbeiðni per lánadrottinn fellur að núverandi samþykktarferli í Business Central.</li>
+    </ul>
+
+    <h2>Tæknilegar forsendur</h2>
     <table class="specs">
         <tr>
-            <th>Útgefandi</th>
-            <td>Metadata</td>
+            <th>Kerfi</th>
+            <td>Microsoft Dynamics 365 Business Central 28 (SaaS).</td>
         </tr>
         <tr>
-            <th>Vettvangur</th>
-            <td>Business Central 27.0+</td>
-        </tr>
-        <tr>
-            <th>Þýðingar</th>
-            <td>Íslenska, enska sjálfgefin</td>
+            <th>Tungumál</th>
+            <td>Íslenska og enska sjálfgefin.</td>
         </tr>
         <tr>
             <th>Ytri háðsemi</th>
-            <td>Engin – byggir aðeins á innbyggðum þjónustum Business Central.</td>
+            <td>Engin önnur AL-viðbót þarf að vera uppsett.</td>
         </tr>
         <tr>
-            <th>Vinnsla á gervigreind</th>
-            <td>Claude frá Anthropic – API-lykill geymdur dulritaður á uppsetningarsíðu.</td>
+            <th>Gervigreind</th>
+            <td>Claude frá Anthropic. API-lykill geymdur dulkóðaður á uppsetningarsíðu.</td>
         </tr>
         <tr>
-            <th>Íslandsbanka samþætting</th>
-            <td>Sérsmíðuð brú með öruggu auðkenningarflæði; sér uppsetning fyrir hvert fyrirtæki, leyniorð í lyklageymslu.</td>
+            <th>Bankatengingar</th>
+            <td>Krefst aðgangs að API þjónustum Íslandsbanka, Arion og Landsbanka.</td>
         </tr>
         <tr>
-            <th>Rekstur</th>
-            <td>Sjálfvirk vinnsla notar verkröðun; daglegt yfirlit og bankaniðurhal keyra á áætlun.</td>
+            <th>Verkröðun</th>
+            <td>Task Scheduler virkjaður í Business Central.</td>
         </tr>
     </table>
 
-    <h2>Studdar skráartegundir</h2>
-    <div class="pillrow">
-        <span class="pill">XML (UBL 2.0)</span>
-        <span class="pill">PDF</span>
-        <span class="pill">JPG / JPEG</span>
-        <span class="pill">PNG</span>
-        <span class="pill">GIF</span>
-        <span class="pill">WEBP</span>
+    <h2>Hvert á að halda næst?</h2>
+    <div class="features">
+        <div class="feature">
+            <div class="icon">→</div>
+            <h3>Uppsetning</h3>
+            <p>Skref-fyrir-skref leiðbeiningar: leyfi, Claude API-lykill, Íslandsbanka tenging og verkröð.</p>
+            <a class="more" href="GettingStarted.html">Opna uppsetningu →</a>
+        </div>
+        <div class="feature">
+            <div class="icon">→</div>
+            <h3>Verkflæði</h3>
+            <p>Hvernig dagur bókhaldsstjórans lítur út með Smart Central – frá fylgiskjali til póstaðs reiknings.</p>
+            <a class="more" href="Workflow.html">Skoða verkflæði →</a>
+        </div>
+        <div class="feature">
+            <div class="icon">→</div>
+            <h3>Spurningar og svör</h3>
+            <p>Algeng vandamál, hvernig á að bregðast við þeim og hvar á að leita í annál.</p>
+            <a class="more" href="FAQ.html">Lesa svör →</a>
+        </div>
     </div>
 
-    <h2>Öryggi og varnir</h2>
-    <ul>
-        <li><strong>Sérstök heimild:</strong> Aðeins notendur með leyfispakkann hafa aðgang að uppsetningu og annál.</li>
-        <li><strong>Þagnarvörn:</strong> Notandi án leyfis truflar ekki vinnslu – kerfið sleppir hljóðlátt án villu.</li>
-        <li><strong>Færsluhindrun:</strong> Hver innflutningur keyrir í einangraðri færslu – villa eyðileggur ekki upphaflega skjalið.</li>
-        <li><strong>Dulkóðun:</strong> API-lyklar og fjarpassorð geymd í einangruðu geymslu, aldrei í hreinum texta.</li>
-        <li><strong>Fjölfyrirtækjastuðningur:</strong> Hvert Business Central fyrirtæki hefur eigin uppsetningu, bankatengingu og annál.</li>
-    </ul>
-
-    <div class="callout">
-        <strong>Þróað fyrir bókhaldsdeildina.</strong> Allar villur eru skráðar með skiljanlegum skilaboðum (t.d. „Samþykktarbeiðni var ekki send – samþykktarferli ekki uppsett fyrir þetta skjal“), svo bókhaldsmaður veit nákvæmlega hvert á að líta án þess að þurfa að lesa tæknilegt logg.
-    </div>
-
-    <footer>
-        <div>Smart E-Documents · Metadata ehf.</div>
+    <footer class="site-footer">
+        <div>Smart Central · Metadata ehf.</div>
         <div>Drög · 13.05.2026</div>
     </footer>
 

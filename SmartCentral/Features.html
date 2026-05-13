@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Central – Eiginleikar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+    <a class="brand" href="Index.html">Smart Central</a>
+    <nav>
+        <a href="Index.html">Forsíða</a>
+        <a href="Features.html" aria-current="page">Eiginleikar</a>
+        <a href="GettingStarted.html">Uppsetning</a>
+        <a href="Workflow.html">Verkflæði</a>
+        <a href="FAQ.html">Spurningar</a>
+    </nav>
+</header>
+
+<div class="page">
+
+    <header class="hero">
+        <div class="eyebrow">Eiginleikar</div>
+        <h1>Það sem Smart Central gerir</h1>
+        <p class="lede">
+            Yfirgripsmikið yfirlit yfir hvern eiginleika – hvað hann gerir, hvenær hann fer í gang, hvað notandinn sér og hvaða stillingar liggja að baki.
+        </p>
+    </header>
+
+    <h2>Vinnsla skjala</h2>
+
+    <section class="feature-detail" id="auto-processing">
+        <h3>Sjálfvirk vinnsla skjala</h3>
+        <p class="tagline">Þegar fylgiskjal lendir, byrjar vélin að snúast.</p>
+        <p>
+            Um leið og fylgiskjal er fest á <em>móttekið skjal</em> – sama hvort það kemur frá tölvupósti, er dregið inn handvirkt eða berst frá Íslandsbanka – ræsir Smart Central vinnslu sjálfkrafa. Hér þarf engan að ýta á hnapp. XML-reikningar eru þættaðir staðbundið. PDF og myndir eru send á Claude gervigreind. Þegar þátturinn klárar verður innkaupareikningur til með línum, dagsetningum og lánadrottni.
+        </p>
+        <p>
+            Innan við þrjár sekúndur frá því að skjalið birtist í Business Central er það venjulega fullunnið og tilbúið til skoðunar.
+        </p>
+        <figure class="screenshot">
+            <div class="placeholder">[ SKJÁSKOT: Móttekið skjal eftir sjálfvirka vinnslu – fylgiskjal, innkaupareikningur og staða annáls ]</div>
+            <figcaption>Færsla sem vannst sjálfkrafa, með tilvísun í innkaupareikning</figcaption>
+        </figure>
+        <h4>Hvenær fer þetta í gang?</h4>
+        <ul>
+            <li>Þegar nýju fylgiskjali er bætt á móttekið skjal (frá hvaða gátt sem er).</li>
+            <li>Þegar Íslandsbanka kvittun kemur inn úr sjálfvirku niðurhali.</li>
+            <li>Þegar notandi velur <em>„Endurkeyra“</em> á skjali sem áður mistókst.</li>
+        </ul>
+        <h4>Stillingar</h4>
+        <p>
+            Hægt er að slökkva á sjálfvirkri vinnslu með rofa á uppsetningarsíðu. Þegar slökkt er á henni hverfur kerfið ekki – handvirka aðgerðin <em>„Búa til Smart skjal“</em> á skjalskorti er enn í boði.
+        </p>
+    </section>
+
+    <section class="feature-detail" id="ubl">
+        <h3>Rafrænir reikningar (UBL 2.0)</h3>
+        <p class="tagline">XML er lesið staðbundið – engin gögn fara út úr kerfinu.</p>
+        <p>
+            UBL XML-reikningar eru þættaðir innan Business Central. Smart Central nær út kennitölu lánadrottnar, reikningsnúmeri, gjalddaga, gjaldmiðli, fjárhæðum og hverri línu. Hver einasta lína getur orðið að bókhaldslínu eða – ef lánadrottinn vill sameinaðar línur – verður ein samanlögð lína á réttan HB-reikning.
+        </p>
+        <p>
+            <strong>EINDAGI yfirskrift.</strong> Þegar XML-reikningurinn inniheldur sérstaka <code>EINDAGI</code> athugasemd er sá gjalddagi virtur framar staðlaða <code>cbc:DueDate</code> reitnum. Þannig fylgir kerfið íslenskri venju um síðasta gjalddaga.
+        </p>
+        <figure class="screenshot">
+            <div class="placeholder">[ SKJÁSKOT: Smart Central að lesa UBL XML – sýnir reiti sem voru dregnir fram ]</div>
+            <figcaption>Þættari UBL XML með reitum sem voru lesnir</figcaption>
+        </figure>
+        <h4>Lánadrottnaleit</h4>
+        <p>
+            Kennitala úr <code>cac:AccountingSupplierParty</code> er hreinsuð (bandstrik, bil) og borin saman við reit <em>„Nr.“</em> og <em>„Skráningarnúmer“</em> á lánadrottni. Ef kennitalan svarar til eigin fyrirtækis (kennitala kaupanda) er hún hunsuð – kerfið velur ekki ranglega sjálft sig sem lánadrottin.
+        </p>
+        <p>
+            Finnist enginn lánadrottinn er XML-skjalinu sleppt og færsla skráð í annál með stöðunni <em>„Lánadrottinn fannst ekki“</em>. Engin sjálfgefinn lánadrottinn er notaður fyrir XML – það kæmi í veg fyrir villuleit.
+        </p>
+    </section>
+
+    <section class="feature-detail" id="ai">
+        <h3>Gervigreind fyrir PDF og myndir</h3>
+        <p class="tagline">Claude les það sem augun sjá.</p>
+        <p>
+            PDF, JPG, JPEG, PNG, GIF og WEBP eru send á <strong>Claude</strong> – stóra mállíkanið frá Anthropic. Líkanið skoðar skjalið og skilar baka uppbyggðum gögnum: lánadrottni (oftast af kennitölu), reikningsnúmeri, dagsetningu, gjalddaga, gjaldmiðli og línum með lýsingu og fjárhæðum.
+        </p>
+        <p>
+            Þú getur valið hvaða Claude-líkan er notað á uppsetningarsíðu. Sjálfgefið er <em>claude-sonnet-4-6</em> – góð málamiðlun milli kostnaðar og nákvæmni.
+        </p>
+        <figure class="screenshot">
+            <div class="placeholder">[ SKJÁSKOT: PDF reikningur og samsvarandi innkaupareikningur í BC ]</div>
+            <figcaption>PDF kvittun og afurðin í Business Central</figcaption>
+        </figure>
+        <h4>Sjálfgefnir lánadrottnar</h4>
+        <p>
+            Þegar Claude finnur ekki kennitölu sem svarar til lánadrottnar í kerfinu, gripa sjálfgefnir lánadrottnar:
+        </p>
+        <ul>
+            <li><strong>Sjálfgefinn reikningalánadrottinn</strong> – fyrir PDF reikninga.</li>
+            <li><strong>Sjálfgefinn kvittunalánadrottinn</strong> – fyrir myndir og kvittanir.</li>
+        </ul>
+        <p>
+            Þessi tvískipting kemur í veg fyrir að kvittanir frá ókunnum búðum (sem koma sjaldan og þarf ekki að stofna sem lánadrottna) trufli reikninga frá raunverulegum birgjum.
+        </p>
+        <div class="callout warn">
+            <strong>Athugasemd um gjalddaga.</strong> Á PDF skjölum getur EINDAGI fundist í texta sem mynd, og er ekki alltaf lesinn rétt. Skoðaðu gjalddagann ef hann skiptir máli fyrir greiðsluáætlun.
+        </div>
+    </section>
+
+    <h2>Aðalvalmynd</h2>
+
+    <section class="feature-detail" id="smart-central">
+        <h3>Smart Central aðalvalmynd</h3>
+        <p class="tagline">Allt sem dagurinn snýst um, á einum stað.</p>
+        <p>
+            Aðalvalmyndin (<em>Smart Central</em>) býður upp á þriggja dálka yfirlit:
+        </p>
+        <ul>
+            <li><strong>Uppsetning</strong> – beint í uppsetningarsíðu og lánadrottnaskrá.</li>
+            <li><strong>Virkar færslur</strong> – óafgreidd skjöl flokkuð eftir <em>Skjalaflokki</em>: Kvittanir, Greiðslukort, Reikningar, Rafrænir reikningar, Óflokkað. Smellt á flokk – kerfið opnar listann síaðan á þann flokk.</li>
+            <li><strong>Afgreidd skjöl</strong> – nákvæmlega sami flokkalisti en fyrir skjöl sem hafa þegar fengið innkaupareikning. Auk þess teljari yfir póstaða reikninga.</li>
+        </ul>
+        <figure class="screenshot">
+            <div class="placeholder">[ SKJÁSKOT: Smart Central aðalvalmynd með talningum ]</div>
+            <figcaption>Þriggja dálka aðalvalmynd með rauntölum</figcaption>
+        </figure>
+        <h4>Aðgerðaslá</h4>
+        <p>
+            Aðgerðaslá er skipt í þrjá flokka:
+        </p>
+        <ul>
+            <li><strong>Uppsetning</strong> – uppsetningarsíða, lánadrottnaskrá.</li>
+            <li><strong>Kreditkort</strong> – Íslandsbanki tenging, kortalisti, MCC vörpun.</li>
+            <li><strong>Sjálfvirkni</strong> – annáll, daglegt yfirlit á eftirspurn.</li>
+        </ul>
+    </section>
+
+    <section class="feature-detail" id="categories">
+        <h3>Skjalaflokkar</h3>
+        <p class="tagline">Réttur flokkur, réttur listi.</p>
+        <p>
+            Hverri færslu er gefinn flokkur sem ræður því hvar hún birtist í aðalvalmynd:
+        </p>
+        <ul>
+            <li><strong>Óflokkað</strong> – nýjar færslur þangað til kerfið flokkar þær.</li>
+            <li><strong>Kvittanir</strong> – kortakvittanir frá Íslandsbanka og PDF kvittanir.</li>
+            <li><strong>Greiðslukort</strong> – staðfestar greiðslukortafærslur.</li>
+            <li><strong>Reikningar</strong> – PDF reikningar frá birgjum.</li>
+            <li><strong>Rafrænir reikningar</strong> – UBL XML reikningar.</li>
+        </ul>
+        <p>
+            Flokkurinn birtist sem dálkur á lista yfir móttekin skjöl, og er einnig notaður þegar smellt er á tölu í aðalvalmynd.
+        </p>
+    </section>
+
+    <h2>Íslandsbanki</h2>
+
+    <section class="feature-detail" id="isb">
+        <h3>Íslandsbanka samþætting</h3>
+        <p class="tagline">Kreditkort og kvittanir koma sjálfkrafa inn.</p>
+        <p>
+            Smart Central tengist beint Íslandsbanka í gegnum sérsmíðaða þjónustubrú. Tengingin er gerð einu sinni: notandi er sendur í gegnum vefviðmót bankans (OAuth flæði), og þaðan er kerfið með varanlegt aðgangsleyfi sem geymt er dulritað í lyklageymslu, sér fyrir hvert Business Central fyrirtæki.
+        </p>
+        <p>
+            Þegar tengingin er virk er hægt að sækja:
+        </p>
+        <ul>
+            <li><strong>Kreditkort fyrirtækisins</strong> – listi yfir öll kort sem tengjast aðganginum.</li>
+            <li><strong>Kortafærslur</strong> – mánuður í einu, með kaupmanni, fjárhæð, flokkanúmeri (MCC) og dagsetningu.</li>
+            <li><strong>Kvittanir</strong> – myndir af pappírskvittunum sem skannaðar voru í gegnum app bankans.</li>
+        </ul>
+        <figure class="screenshot">
+            <div class="placeholder">[ SKJÁSKOT: Yfirlitskort yfir tengingu við Íslandsbanka og kortalisti ]</div>
+            <figcaption>Stöðukort fyrir tengingu og listi yfir kort</figcaption>
+        </figure>
+        <h4>Sjálfvirkt niðurhal</h4>
+        <p>
+            Verkröð keyrir vinnu á dagsbasis: sækir nýjustu kortin, færslur núverandi og fyrri mánaðar og kvittanir síðustu 14 daga. Sérhver beiðni er einangruð, þannig að ein villa á einu korti stoppar ekki allan keyrsluna.
+        </p>
+    </section>
+
+    <section class="feature-detail" id="gl-mapping">
+        <h3>Vörpun á bókhaldsreikning eftir kaupmannaflokki</h3>
+        <p class="tagline">Veitingar lenda á réttum HB-reikningi sjálfkrafa.</p>
+        <p>
+            Hver kortafærsla frá Íslandsbanka inniheldur <strong>MCC – Merchant Category Code</strong>. Þetta er staðlaður fjögurra-stafa flokkur kaupmanns (5812 = veitingar, 5411 = matvöruverslun, 7011 = gisting o.s.frv.). Smart Central safnar þessum flokkum sjálfkrafa eftir því sem þeir birtast í færslunum, og lætur notanda úthluta HB-reikningi á hvern flokk.
+        </p>
+        <p>
+            Þegar kortakvittun verður að innkaupareikningi, leitar kerfið fyrst að vörpun fyrir MCC kaupmannsins. Ef vörpun finnst er sá HB-reikningur notaður. Ef ekki, fer kostnaðurinn á sjálfgefið HB-reikningsnúmer lánadrottnar.
+        </p>
+        <figure class="screenshot">
+            <div class="placeholder">[ SKJÁSKOT: MCC vörpunarlisti með nokkrum vöruðum flokkum ]</div>
+            <figcaption>Vörpun MCC-flokks á HB-reikningsnúmer</figcaption>
+        </figure>
+    </section>
+
+    <section class="feature-detail" id="local-build">
+        <h3>Staðbundin smíði fyrir kortakvittanir</h3>
+        <p class="tagline">Þegar kortið þekkir lánadrottin er gervigreind óþörf.</p>
+        <p>
+            Á hverju kreditkorti má skrá <em>„Tengdur lánadrottinn“</em>. Þegar kvittun kemur inn frá tengdu korti, sleppir Smart Central Claude alveg – innkaupareikningurinn er smíðaður beint úr bankafærslunni. Þetta sparar kostnað við gervigreind, eykur hraða og forðast hugsanlega villu Claude í lánadrottnavali.
+        </p>
+        <p>
+            Hér nýtist MCC vörpunin: HB-reikningurinn er valinn eftir flokki kaupmanns. Ef engin vörpun finnst grípur sjálfgefið HB-reikningsnúmer lánadrottnar. Ef kortið er <em>ekki</em> tengt lánadrottni, fer kvittunin venjulega Claude-leiðina.
+        </p>
+    </section>
+
+    <h2>Samþykkt og tilkynningar</h2>
+
+    <section class="feature-detail" id="approval">
+        <h3>Sjálfvirk samþykktarbeiðni</h3>
+        <p class="tagline">Frá fylgiskjali til samþykkis – án millihafa.</p>
+        <p>
+            Hver lánadrottinn getur valið rofann <em>„Sjálfvirk samþykktarbeiðni“</em>. Þegar Smart Central stofnar innkaupareikning fyrir slíkan lánadrottin, sendir kerfið hann sjálfkrafa í samþykktarferli Business Central – sömu leið og notandi myndi gera handvirkt með hnappnum <em>„Senda í samþykktarferli“</em> á reikningnum.
+        </p>
+        <p>
+            Hægt er að tilgreina <em>samþykktarflokk</em> á lánadrottni sem ræður því hvaða <em>innkaupsfulltrúi</em> er settur á reikninginn áður en hann fer í gegnum samþykktarferlið. Þetta þýðir að reikningar frá tilteknum birgjum fara sjálfkrafa á réttan samþykkjanda.
+        </p>
+        <figure class="screenshot">
+            <div class="placeholder">[ SKJÁSKOT: Lánadrottnaspjald með Sjálfvirk samþykktarbeiðni virkjuðu ]</div>
+            <figcaption>Reitir á lánadrottnaspjaldi sem stýra sjálfvirku samþykktarferli</figcaption>
+        </figure>
+        <div class="callout warn">
+            <strong>Krafa.</strong> Samþykktarferli fyrir innkaupareikninga verður að vera virkjað í Business Central (sjá <em>„Workflows“</em>), og samþykkjandakeðjan rétt sett upp. Annars verður tilraunin skráð í annál sem mistókst, með skiljanlegri ástæðu.
+        </div>
+    </section>
+
+    <section class="feature-detail" id="notification">
+        <h3>Daglegt yfirlit í tölvupósti</h3>
+        <p class="tagline">Einn póstur á dag – ekkert hverfur þegjandi.</p>
+        <p>
+            Verkröð keyrir einu sinni á dag (oftast að loknum vinnudegi) og sendir tölvupóst með yfirliti yfir allar vinnslur dagsins. Pósturinn inniheldur tvær töflur:
+        </p>
+        <ul>
+            <li><strong>Það sem tókst.</strong> Listi yfir skjöl sem fóru í gegn, með lánadrottni, fjárhæð og skjalanúmeri.</li>
+            <li><strong>Það sem þarf athugun.</strong> Skjöl sem mistókst eða fundu ekki lánadrottin, með skiljanlegri ástæðu á íslensku.</li>
+        </ul>
+        <p>
+            Aðeins færslur sem ekki hafa verið tilkynntar áður koma með – þannig verður pósturinn aldrei endurtekning. Ef sending mistekst eru færslurnar áfram ótilkynntar og koma með næstu keyrslu.
+        </p>
+        <figure class="screenshot">
+            <div class="placeholder">[ SKJÁSKOT: Innihald daglegs tölvupósts ]</div>
+            <figcaption>Tvær töflur – „Tókst“ og „Þarf athugun“</figcaption>
+        </figure>
+    </section>
+
+    <section class="feature-detail" id="log">
+        <h3>Annáll yfir sjálfvirka vinnslu</h3>
+        <p class="tagline">Sönnun fyrir hverri vinnslu, með tímastimpli og ástæðu.</p>
+        <p>
+            Allar tilraunir – jafnt þær sem heppnast og þær sem mistakast – eru skráðar í annál. Hver færsla inniheldur tíma, stöðu, lánadrottin, skjalanúmer, lengd vinnslu og villuboð ef eitthvað fór úrskeiðis.
+        </p>
+        <p>
+            Mögulegar stöður:
+        </p>
+        <ul>
+            <li><strong>Tókst</strong> – innkaupareikningur var stofnaður.</li>
+            <li><strong>Lánadrottinn fannst ekki</strong> – kennitala leiddi ekki til lánadrottnar (kemur aðeins fyrir XML).</li>
+            <li><strong>Þegar tengt</strong> – skjalið var nú þegar tengt innkaupareikningi áður en sjálfvirk vinnsla hófst.</li>
+            <li><strong>Ekki gjaldgengt</strong> – skráartegundin er ekki studd.</li>
+            <li><strong>Mistókst</strong> – villa kom upp við þátt eða Claude svar.</li>
+        </ul>
+        <figure class="screenshot">
+            <div class="placeholder">[ SKJÁSKOT: Annálslisti með litkóðuðum stöðum ]</div>
+            <figcaption>Litkóðaðar stöður á annálslista</figcaption>
+        </figure>
+        <h4>Endurkeyrsla</h4>
+        <p>
+            Á skjalskorti móttekins skjals er aðgerð <em>„Endurkeyra“</em>. Hún hreinsar fyrri vinnslu, gerir nýja tilraun og skrifar nýja færslu í annál. Þetta gagnast þegar lánadrottinn hefur verið stofnaður eftir á, eða þegar tímabundin villa var komin í veg fyrir vinnslu.
+        </p>
+    </section>
+
+    <h2>Lánadrottnauppsetning</h2>
+
+    <section class="feature-detail" id="vendor">
+        <h3>Lánadrottnauppsetning</h3>
+        <p class="tagline">Allar Smart Central stillingar á lánadrottnaspjaldi.</p>
+        <p>
+            Engin sérstök síða eða spjald – allar lánadrottnasérstilltar stillingar lifa á sjálfu lánadrottnaspjaldinu:
+        </p>
+        <ul>
+            <li><strong>Sjálfgefið HB-reikningsnúmer</strong> – hvert kostnaðurinn fer þegar ekkert annað grípur.</li>
+            <li><strong>Ekki sameina línur</strong> – ef rofinn er virkur, verður hver XML-lína sín eigin innkaupalína. Ef hann er af, eru línur sameinaðar á eitt HB-reikningsnúmer.</li>
+            <li><strong>Sjálfvirk samþykktarbeiðni</strong> – sjá hér að ofan.</li>
+            <li><strong>Samþykktarflokkur</strong> – ræður innkaupsfulltrúa á reikningnum.</li>
+        </ul>
+        <figure class="screenshot">
+            <div class="placeholder">[ SKJÁSKOT: Smart Central reitirnir á lánadrottnaspjaldi ]</div>
+            <figcaption>Smart Central hlutinn á lánadrottnaspjaldi</figcaption>
+        </figure>
+    </section>
+
+    <h2>Studdar skráartegundir</h2>
+    <div class="pillrow">
+        <span class="pill">XML (UBL 2.0)</span>
+        <span class="pill">PDF</span>
+        <span class="pill">JPG / JPEG</span>
+        <span class="pill">PNG</span>
+        <span class="pill">GIF</span>
+        <span class="pill">WEBP</span>
+    </div>
+
+    <h2>Öryggi og varnir</h2>
+    <ul>
+        <li><strong>Sérstök heimild.</strong> Aðeins notendur með leyfispakkann <em>SmartEDocsPrm</em> sjá uppsetningu og annál. Aðrir notendur (t.d. dagbókarnotendur) trufla aldrei sjálfvirkar vinnslur.</li>
+        <li><strong>Þagnarvörn.</strong> Atburðaáskriftin sem ræsir sjálfvirku vinnsluna er einangruð: villa þar getur aldrei skemmt upphaflega aðgerðina (t.d. festingu fylgiskjals).</li>
+        <li><strong>Færsluhindrun.</strong> Hver innflutningur keyrir í einangraðri færslu. Mistekst hann, er upphafsskjalið óbreytt og hægt að endurkeyra.</li>
+        <li><strong>Dulkóðun.</strong> API-lyklar og fjarpassorð eru geymd í <em>Isolated Storage</em> Business Central – aldrei í hreinum texta í gagnagrunni.</li>
+        <li><strong>Fjölfyrirtækjastuðningur.</strong> Hvert Business Central fyrirtæki hefur eigin uppsetningu, eigin Íslandsbanka tengingu, eigin annál og eigin daglegt yfirlit.</li>
+    </ul>
+
+    <footer class="site-footer">
+        <div>Smart Central · Metadata ehf.</div>
+        <div>Drög · 13.05.2026</div>
+    </footer>
+
+</div>
+</body>
+</html>
